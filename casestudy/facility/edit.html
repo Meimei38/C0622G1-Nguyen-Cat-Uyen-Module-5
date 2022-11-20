@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <title>Edit Facility</title>
+    <title>Edit Customer</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
           rel="stylesheet"
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
@@ -97,7 +97,7 @@
     </div>
     <div class="row">
         <h1>
-            Edit Facility
+            Edit Customer
         </h1>
     </div>
 
@@ -110,106 +110,77 @@
 
                     <input hidden type="text" id="id" >
 
-                    <div class="form-group">
-                        <label class="h6" for="facilityType">Facility Type:</label>
+
+
+                    <div class="mt-3 form-group">
+                        <label for="name" class="h6">Customer name:</label>
                         <div class="input-group">
-                            <select id="facilityType" class="form-select" onchange="changeForm(this)">
-                                <option value="">Choose Facility</option>
-                                <option value="1">Villa</option>
-                                <option value="2">House</option>
-                                <option value="3">Room</option>
+                            <input type="text" id="name" class="form-control" placeholder="Enter Customer name"/>
+                            <span class="input-group-text"><i class="fa-solid fa-file-signature"></i></span>
+                        </div>
+                    </div>
+                    <div class="mt-3 form-group">
+                        <label for="birthday" class="h6">Date of Birth:</label>
+                        <div class="input-group">
+                            <input type="date" id="birthday" class="form-control" placeholder="Enter Customer date of birth"/>
+                            <span class="input-group-text"><i class="fa-solid fa-file-signature"></i></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="h6" for="gender">Gender:</label>
+                        <div class="input-group">
+                            <select id="gender" class="form-select" >
+                                <option value="1">Male</option>
+                                <option value="2">Female</option>
+                                <option value="3">Other</option>
                             </select>
                             <span class="input-group-text"><i class="fa-solid fa-house-user"></i></span>
                         </div>
                     </div>
-
                     <div class="mt-3 form-group">
-                        <label for="name" class="h6">Facility name:</label>
+                        <label for="idCard" class="h6">ID:</label>
                         <div class="input-group">
-                            <input type="text" id="name" class="form-control" placeholder="Enter Facility"/>
+                            <input type="text" id="idCard" class="form-control" placeholder="Enter ID number"/>
+                            <span class="input-group-text"><i class="fa-solid fa-file-signature"></i></span>
+                        </div>
+                    </div>
+                    <div class="mt-3 form-group">
+                        <label for="phoneNumber" class="h6">Phone number:</label>
+                        <div class="input-group">
+                            <input type="text" id="phoneNumber" class="form-control" placeholder="Enter phone number"/>
                             <span class="input-group-text"><i class="fa-solid fa-file-signature"></i></span>
                         </div>
                     </div>
 
                     <div class="mt-3 form-group">
-                        <label for="area" class="h6">Area (m<sup>2</sup>):</label>
+                        <label for="email" class="h6">Email:</label>
                         <div class="input-group">
-                            <input type="number" id="area" class="form-control" placeholder="Enter area"/>
-                            <span class="input-group-text"><i class="fa-solid fa-chart-area"></i></span>
+                            <input type="text" id="email" class="form-control" placeholder="Enter email"/>
+                            <span class="input-group-text"><i class="fa-solid fa-file-signature"></i></span>
                         </div>
                     </div>
-
-                    <div class="mt-3 form-group">
-                        <label for="cost" class="h6">Cost (VNĐ):</label>
+                    <div class="form-group">
+                        <label class="h6" for="facilityType">Customer Type:</label>
                         <div class="input-group">
-                            <input type="number" id="cost" class="form-control" placeholder="Enter rent cost"/>
-                            <span class="input-group-text"><i class="fa-solid fa-dollar-sign"></i></span>
-                        </div>
-                    </div>
-
-                    <div class="mt-3 form-group">
-                        <label for="maxPeople" class="h6">Max people:</label>
-                        <div class="input-group">
-                            <input type="number" id="maxPeople" class="form-control" placeholder="Enter max people"/>
-                            <span class="input-group-text"><i class="fa-solid fa-person"></i></span>
-                        </div>
-                    </div>
-
-                    <div class="mt-3 form-group" id="standardRoomForm" style="display: none">
-                        <label for="standardRoom" class="h6">Room Standard</label>
-                        <div class="input-group">
-                            <input type="text" id="standardRoom" class="form-control" placeholder="Enter room standard"/>
-                            <span class="input-group-text"><i class="fa-solid fa-star"></i></span>
-                        </div>
-                    </div>
-
-                    <div class="mt-3 form-group" id="descriptionForm" style="display: none">
-                        <label for="description" class="h6">Other convenience description</label>
-                        <div class="input-group">
-                            <input type="text" id="description" class="form-control"
-                                   placeholder="Enter other convenience description"/>
-                            <span class="input-group-text"><i class="fa-solid fa-book"></i></span>
-                        </div>
-                    </div>
-
-                    <div class="mt-3 form-group" id="poolAreaForm" style="display: none">
-                        <label for="poolArea" class="h6">Pool Area (m<sup>2</sup>):</label>
-                        <div class="input-group">
-                            <input type="number" id="poolArea" class="form-control" placeholder="Enter pool area"/>
-                            <span class="input-group-text"><i class="fa-solid fa-person-swimming"></i></span>
-                        </div>
-                    </div>
-
-                    <div class="mt-3 form-group" id="numberOfFloorsForm" style="display: none">
-                        <label for="numberOfFloors" class="h6">Number of Floors:</label>
-                        <div class="input-group">
-                            <input type="number" id="numberOfFloors" class="form-control"
-                                   placeholder="Enter number of floors"/>
-                            <span class="input-group-text"><i class="fa-solid fa-building"></i></span>
-                        </div>
-                    </div>
-
-                    <div class="mt-3 form-group" id="facilityFreeForm" style="display: none">
-                        <label for="facilityFree" class="h6">Free Facility:</label>
-                        <div class="input-group">
-                            <input type="text" id="facilityFree" class="form-control"
-                                   placeholder="Enter free facility"/>
-                            <span class="input-group-text"><i class="fa-solid fa-gift"></i></span>
-                        </div>
-                    </div>
-
-                    <div class="mt-3 form-group">
-                        <label class="h6" for="rentType">Rent type:</label>
-                        <div class="input-group">
-                            <select id="rentType" class="form-select">
-                                <option> Year</option>
-                                <option> Month</option>
-                                <option> Week</option>
-                                <option> Day</option>
+                            <select id="facilityType" class="form-select" onchange="changeForm(this)">
+                                <option value="">Choose Customer Type</option>
+                                <option value="1">Diamond</option>
+                                <option value="2">Platinum</option>
+                                <option value="4">Gold</option>
+                                <option value="5">Silver</option>
+                                <option value="6">Member</option>
                             </select>
-                            <span class="input-group-text"><i class="fa-solid fa-business-time"></i></span>
+                            <span class="input-group-text"><i class="fa-solid fa-house-user"></i></span>
                         </div>
                     </div>
+                    <div class="mt-3 form-group">
+                        <label for="address" class="h6">Address:</label>
+                        <div class="input-group">
+                            <input type="text" id="address" class="form-control" placeholder="Enter Address"/>
+                            <span class="input-group-text"><i class="fa-solid fa-file-signature"></i></span>
+                        </div>
+                    </div>
+
 
                     <div class="mt-3 text-center">
                         <button type="submit" class="btn  btn-sm border border-light  text-dark">
@@ -226,39 +197,5 @@
         crossorigin="anonymous"></script>
 <script src="/utils/bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script>
-    function changeForm(type) {
-        let selectType = parseInt(type.value);
-        switch (selectType) {
-            case 1:
-                document.getElementById("standardRoomForm").style.display = "block";
-                document.getElementById("descriptionForm").style.display = "block";
-                document.getElementById("poolAreaForm").style.display = "block";
-                document.getElementById("numberOfFloorsForm").style.display = "block";
-                document.getElementById("facilityFreeForm").style.display = "none";
-                break;
-            case 2:
-                document.getElementById("standardRoomForm").style.display = "block";
-                document.getElementById("descriptionForm").style.display = "block";
-                document.getElementById("poolAreaForm").style.display = "none";
-                document.getElementById("numberOfFloorsForm").style.display = "block";
-                document.getElementById("facilityFreeForm").style.display = "none";
-                break;
-            case 3:
-                document.getElementById("standardRoomForm").style.display = "none";
-                document.getElementById("descriptionForm").style.display = "none";
-                document.getElementById("poolAreaForm").style.display = "none";
-                document.getElementById("numberOfFloorsForm").style.display = "none";
-                document.getElementById("facilityFreeForm").style.display = "block";
-                break
-            default:
-                document.getElementById("standardRoomForm").style.display = "none";
-                document.getElementById("descriptionForm").style.display = "none";
-                document.getElementById("poolAreaForm").style.display = "none";
-                document.getElementById("numberOfFloorsForm").style.display = "none";
-                document.getElementById("facilityFreeForm").style.display = "none";
-        }
-    }
-</script>
 </body>
 </html>

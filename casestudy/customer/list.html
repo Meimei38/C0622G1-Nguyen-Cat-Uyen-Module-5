@@ -123,14 +123,14 @@
     </div>
 
     <h1>
-        Customer List
+        Facility List
     </h1>
 
 </div>
 <div class="row d-flex" style="padding-left: 30px; padding-right: 30px">
-    <form method="get" style="width: 50%; float: left">
+    <form  method="get" style="width: 50%; float: left">
         <input type="hidden" name="action" value="add">
-        <button class="btn" type="submit" id="add"> Add customer</button>
+        <button class="btn" type="submit" id="add"> Add facility</button>
     </form>
     <form style="width:50%; margin-right: 0; padding-left: 80px">
         <input type="hidden" name="action" value="search">
@@ -139,13 +139,8 @@
                 <input type="text" name="searchName" class="form-control" placeholder="Name">
             </div>
             <div class="col-3">
-                <select class="form-select" name="searchCustomerType" id="searchCustomerType">
-                    <option value="">Customer Type</option>
-                    <option value="1">Diamond</option>
-                    <option value="2">Platinum</option>
-                    <option value="4">Gold</option>
-                    <option value="5">Silver</option>
-                    <option value="6">Member</option>
+                <select class="form-select" name="searchFacilityType" id="searchFacilityType">
+                    <option value="">Facility Type</option>
                 </select>
             </div>
             <div class="col-3 px-0" style="right: 0">
@@ -161,13 +156,11 @@
         <tr>
             <th>No.</th>
             <th>Name</th>
-            <th>Date of Birth</th>
-            <th>Gender</th>
-            <th>ID card</th>
-            <th>Phone number</th>
-            <th>Email</th>
-            <th>Customer Type</th>
-            <th>Address</th>
+            <th>Area (m<sup>2</sup>)</th>
+            <th>Rent Cost</th>
+            <th>Max People</th>
+            <th>Rent Type</th>
+            <th>Facility Type</th>
             <th> View</th>
             <th> Edit</th>
             <th> Delete</th>
@@ -175,15 +168,14 @@
         </thead>
         <tbody>
         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
 
             <!--view button-->
 
@@ -196,7 +188,7 @@
             </td>
             <!--Edit button -->
             <td>
-                <a  href="edit.html" class="btn btn-primary">
+                <a class="btn btn-primary">
                     Edit
                 </a>
             </td>
@@ -241,12 +233,12 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header btn-warning">
-                <h5 class="modal-title" id="exampleModalLabel-delete">Delete Customer</h5>
+                <h5 class="modal-title" id="exampleModalLabel-delete">Delete Facility</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                         aria-label="Close"></button>
             </div>
             <div class="modal-body btn-light">
-                Delete Customer <strong style="color: red" id="nameDelete"></strong>?
+                Delete Facility <strong style="color: red" id="nameDelete"></strong>?
             </div>
             <div class="btn-light modal-footer" id="deleteButton">
                 <button class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
@@ -266,7 +258,7 @@
         <div class="modal-content">
 
             <div class="modal-header btn-success">
-                <h5 class="modal-title" id="exampleModalLabel-edit">View Customer</h5>
+                <h5 class="modal-title" id="exampleModalLabel-edit">View Facility</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                         aria-label="Close"></button>
             </div>
@@ -275,49 +267,57 @@
                 <div class="d-flex">
                     <table class="table border-1">
                         <tr>
-                            <td> Id:</td>
+                            <td> Id: </td>
                             <td id="id"></td>
                         </tr>
                         <tr>
-                            <td> Name:</td>
+                            <td> Name: </td>
                             <td id="name"></td>
                         </tr>
 
                         <tr>
-                            <td> Date of birth:</td>
-                            <td id="dateOfBirth"></td>
+                            <td> Area: </td>
+                            <td id="area"></td>
                         </tr>
 
                         <tr>
-                            <td> Gender</td>
-                            <td id="gender"></td>
+                            <td> Cost </td>
+                            <td id="cost"></td>
                         </tr>
 
                         <tr>
-                            <td> Id Card:</td>
-                            <td id="idCard"></td>
+                            <td> Max people: </td>
+                            <td id="maxPeople"></td>
                         </tr>
 
                         <tr>
-                            <td> Phone number:</td>
-                            <td id="phoneNumber"></td>
+                            <td> Room Standard: </td>
+                            <td id="standardRoom"></td>
                         </tr>
 
                         <tr>
-                            <td> Email:</td>
-                            <td id="email"></td>
+                            <td> Other Convenience Description: </td>
+                            <td id="otherConvenienceDescription"></td>
                         </tr>
 
                         <tr>
-                            <td> Customer Type:</td>
-                            <td id="customerType"></td>
+                            <td> Pool Area: </td>
+                            <td id="poolArea"></td>
                         </tr>
 
                         <tr>
-                            <td> Address:</td>
-                            <td id="address"></td>
+                            <td> Number Of Floors: </td>
+                            <td id="numberOfFloors"></td>
                         </tr>
 
+                        <tr>
+                            <td> Free Facility: </td>
+                            <td id="freeFacility"></td>
+                        </tr>
+                        <tr>
+                            <td> Rent Type: </td>
+                            <td id="rentType"></td>
+                        </tr>
                     </table>
                 </div>
             </div>

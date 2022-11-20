@@ -13,8 +13,8 @@ video {
 }
 .text-box{
     position: absolute;
-    top: 23%;
-    right: -35%;
+    top: 35%;
+    right: -55%;
     display: flex;
     width: 50%;
     flex-wrap: wrap;
@@ -43,9 +43,9 @@ video {
     line-height: 1.5;
 }
 img{
-    width: 87px;
-    height: 132px;
-    margin: 5px 20px 5px;
+    width: 60px;
+    height: 85px;
+    margin: 5px 20px 0;
 }
 
 
