@@ -1,0 +1,10 @@
+<p>color-pick works!</p>
+<select #colorText (change)="changeColor(colorText.value)">
+  <option style="color: red" value="red" selected> Red </option>
+  <option style="color: blue" value="blue"> Blue </option>
+  <option style="color: pink" value="pink"> Pink </option>
+  <option style="color: purple" value="purple"> Purple </option>
+  <option style="color: green" value="green"> Green </option>
+</select>
+
+<p [style.color]= "finalColor"> Click button below to change color </p>

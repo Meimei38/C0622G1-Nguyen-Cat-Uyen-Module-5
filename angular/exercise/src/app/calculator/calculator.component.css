@@ -1,0 +1,13 @@
+button{
+  height: 30px;
+  width: 50px;
+  margin: 10px;
+}
+td{
+width: 180px;
+}
+.display{
+  width: 100%;
+  border: solid 1px black;
+  height: 30px;
+}

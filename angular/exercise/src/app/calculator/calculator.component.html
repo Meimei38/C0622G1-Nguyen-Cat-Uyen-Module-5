@@ -1,0 +1,26 @@
+<h1>Calculator</h1>
+<table>
+  <tr>
+    <td>
+      <input type="number"  [(ngModel)]="input1" placeholder="Enter number 1"/>
+    </td>
+    <td>
+      <input type="number" [(ngModel)]="input2" placeholder="Enter number 2"/>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="display">
+      {{result}}
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <button type="button" (click)="add()">+</button>
+      <button type="button" (click)="minus()">-</button>
+    </td>
+    <td>
+      <button type="button" (click)="multiply()">x</button>
+      <button type="button"(click)="divide()">:</button>
+    </td>
+  </tr>
+</table>
