@@ -1,4 +1,41 @@
 
+#furama-welcome {
+    font-size: 50px;
+    font-family: "Copperplate";
+    /*  text-shadow: 0 0 1em #b7882d;*/
+    background: url("media/yellow-1845394__480.jpg");
+    background-size: cover;
+    color: #fff;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+
+}
+
+a.text-nav {
+    color: #146c43 !important;
+    font-weight: bold;
+    font-size: larger;
+}
+
+a.text-nav:hover {
+    text-decoration: underline;
+}
+
+.nav-item.dropdown {
+    margin-left: 20px;
+}
+
+.dropdown-menu {
+    background-color: #066056;
+}
+
+.dropdown-item {
+    color: white;
+}
+
+.dropdown-item:hover {
+    background-color: #c3e6d1;
+}
 video {
     width: 99vw;
     height: 100vh;

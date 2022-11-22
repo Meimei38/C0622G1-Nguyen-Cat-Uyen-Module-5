@@ -5,12 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LayoutCreateComponent } from './layout-create/layout-create.component';
 import { LayoutListComponent } from './layout-list/layout-list.component';
+import { CreateFacilityComponent } from './create-facility/create-facility.component';
+import { EditFacilityComponent } from './edit-facility/edit-facility.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LayoutCreateComponent,
-    LayoutListComponent
+    LayoutListComponent,
+    CreateFacilityComponent,
+    EditFacilityComponent
   ],
   imports: [
     BrowserModule,
