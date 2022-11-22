@@ -7,6 +7,7 @@ import { LayoutCreateComponent } from './layout-create/layout-create.component';
 import { LayoutListComponent } from './layout-list/layout-list.component';
 import { CreateFacilityComponent } from './create-facility/create-facility.component';
 import { EditFacilityComponent } from './edit-facility/edit-facility.component';
+import { ListFacilityComponent } from './list-facility/list-facility.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { EditFacilityComponent } from './edit-facility/edit-facility.component';
     LayoutCreateComponent,
     LayoutListComponent,
     CreateFacilityComponent,
-    EditFacilityComponent
+    EditFacilityComponent,
+    ListFacilityComponent
   ],
   imports: [
     BrowserModule,
