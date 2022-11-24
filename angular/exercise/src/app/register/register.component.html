@@ -31,12 +31,21 @@
       </div>
     </div>
     <div class="mb-3">
-      <label for="gender" class="form-label">Gender</label>
-      <select formControlName="gender" type="number" class="form-control" id="gender">
-        <option value="0">Male</option>
-        <option value="1">Female</option>
-        <option value="2">Others</option>
-      </select>
+      <p class="form-label">Gender</p>
+      <div>
+        <input formControlName="gender" type="radio" value="0">
+        <label class="form-label">Male</label>
+      </div>
+      <div>
+        <input formControlName="gender" type="radio" value="1">
+        <label class="form-label">Female</label>
+      </div>
+      <div>
+        <input formControlName="gender" type="radio" value="2">
+        <label class="form-label">Others</label>
+      </div>
+
+
     </div>
     <div class="mb-3">
       <label for="country" class="form-label">Country</label>
@@ -81,12 +90,12 @@
     <div class="mb-3">
       <label for="exampleInputConfirmPassword1" class="form-label">Confirm Password</label>
       <input formControlName="confirmPassword" type="password" class="form-control" id="exampleInputConfirmPassword1"
-      [ngClass]="rfUser.hasError('reconfirmPassword')? 'is-invalid':'is-valid'">
+             [ngClass]="rfUser.hasError('reconfirmPassword')? 'is-invalid':'is-valid'">
       <div *ngIf="rfUser.hasError('reconfirmPassword')" class="invalid-feedback">
-      Confirm password does not match.
+        Confirm password does not match.
       </div>
     </div>
-    <button type="submit" class="btn btn-primary" [disabled]="!rfUser.valid" >Submit</button>
+    <button type="submit" class="btn btn-primary" [disabled]="!rfUser.valid">Submit</button>
   </form>
 </div>
 
