@@ -10,6 +10,9 @@
     -webkit-background-clip: text;
 
 }
+.navbar{
+    width: 92.6%;
+}
 
 a.text-nav {
     color: #146c43 !important;
@@ -83,6 +86,21 @@ video {
     width: 60px;
     height: 85px;
     margin: 5px 20px 0;
+}
+body{
+    background-image: url("/media/BG2.jpg") ;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-attachment: fixed;
+}
+footer {
+
+    margin-top: 100px;
+    background-color: #046056;
+    height: 300px;
+    padding-top: 50px;
+
 }
 
 

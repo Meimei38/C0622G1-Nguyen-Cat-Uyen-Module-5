@@ -1,0 +1,36 @@
+<div class="container" style="width: 40%; margin-top: 50px">
+  <h2> Register Form </h2>
+  <form [formGroup]="rfUser" (ngSubmit)="onSubmit()" class="me-2">
+
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1"
+             [ngClass]="(rfUser.controls['email'].touched)? rfUser.controls['email'].invalid?'is-invalid':'is-valid':''">
+      <div class="invalid-feedback">
+        <div *ngIf="rfUser.controls['email'].hasError('required') && (rfUser.controls['email'].touched)">
+          Please enter the email.
+        </div>
+        <div *ngIf="rfUser.controls['email'].hasError('pattern') && (rfUser.controls['email'].touched)">
+          Wrong email format.
+        </div>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input formControlName="password" type="password" class="form-control" id="exampleInputPassword1"
+             [ngClass]="(rfUser.controls['password'].touched)? rfUser.controls['password'].invalid?'is-invalid':'is-valid':''">
+      <div class="invalid-feedback">
+        <div *ngIf="rfUser.controls['password'].hasError('required') && (rfUser.controls['password'].touched)">
+          Please enter the password.
+        </div>
+        <div *ngIf="rfUser.controls['password'].hasError('minlength') && (rfUser.controls['password'].touched)">
+          Min length is 6 characters.
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="!rfUser.valid" >Submit</button>
+  </form>
+</div>
+
+

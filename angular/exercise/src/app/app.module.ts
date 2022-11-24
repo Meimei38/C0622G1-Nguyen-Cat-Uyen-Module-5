@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { CalculatorComponent } from './calculator/calculator.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { ColorPickComponent } from './color-pick/color-pick.component';
 import { ArticleComponent } from './article/article.component';
 import { LikeComponent } from './article/like/like.component';
@@ -12,6 +12,8 @@ import { FooterComponent } from './article/footer/footer.component';
 import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 import { RatingBarComponent } from './rating-bar/rating-bar.component';
 import { CountdownTimerComponent } from './countdown-timer/countdown-timer.component';
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -24,11 +26,14 @@ import { CountdownTimerComponent } from './countdown-timer/countdown-timer.compo
     FooterComponent,
     ProgressBarComponent,
     RatingBarComponent,
-    CountdownTimerComponent
+    CountdownTimerComponent,
+    RegisterComponent,
+    LoginComponent
   ],
     imports: [
         BrowserModule,
-        FormsModule
+        FormsModule,
+        ReactiveFormsModule
     ],
   providers: [],
   bootstrap: [AppComponent]
