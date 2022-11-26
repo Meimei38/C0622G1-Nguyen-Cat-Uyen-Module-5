@@ -18,6 +18,9 @@ import {RouterModule, Routes} from "@angular/router";
 import {ProductCreateComponent} from './product_management/product-create/product-create.component';
 import {ProductListComponent} from './product_management/product-list/product-list.component';
 import { ProductEditComponent } from './product_management/product-edit/product-edit.component';
+import { DictionaryComponent } from './dictionary/dictionary.component';
+import { DictionaryPageComponent } from './dictionary/dictionary-page/dictionary-page.component';
+import { DictionaryDetailComponent } from './dictionary/dictionary-detail/dictionary-detail.component';
 
 /*an array that will eventually hold route definitions*/
 
@@ -47,6 +50,9 @@ const routes: Routes = [{
     ProductCreateComponent,
     ProductListComponent,
     ProductEditComponent,
+    DictionaryComponent,
+    DictionaryPageComponent,
+    DictionaryDetailComponent,
   ],
   imports: [
     BrowserModule,
