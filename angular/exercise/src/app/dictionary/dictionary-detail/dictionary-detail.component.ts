@@ -19,6 +19,7 @@ export class DictionaryDetailComponent implements OnInit {
   ngOnInit(): void {
     this.word = this._activatedRoute.snapshot.params['word'];
     this.wordDetail = this._dictionaryService.findByWord(this.word);
+    console.log(this.wordDetail);
   }
 
 }
