@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {ProductService} from "../service/product.service";
 import { Product } from '../model/product';
+import {ActivatedRoute, Router} from "@angular/router";
+import {isNotNullOrUndefined} from "codelyzer/util/isNotNullOrUndefined";
 
 @Component({
   selector: 'app-product-list',
@@ -9,14 +11,24 @@ import { Product } from '../model/product';
 })
 export class ProductListComponent implements OnInit {
   products: Product[] =[];
+  index: number = 0;
 
-  constructor(private _productService: ProductService) { }
+  constructor(private _productService: ProductService,
+              private _activatedRoute: ActivatedRoute,
+              private _router: Router) { }
 
   ngOnInit(): void {
-    this.getAll();
+    this.getAll(this.index);
   }
-  getAll(){
+  getAll(index: number){
+    this.index = this._activatedRoute.snapshot.params['index'];
+    if(isNotNullOrUndefined(this.index)){
+      this._productService.deleteProduct(this.index);
+    }
     this.products =this._productService.getAll();
+    this._router.navigate(['product/list']);
+
   }
+
 
 }

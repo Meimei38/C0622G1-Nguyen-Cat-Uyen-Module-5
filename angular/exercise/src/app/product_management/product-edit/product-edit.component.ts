@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup} from "@angular/forms";
+import {Component, OnInit} from '@angular/core';
+import {Product} from '../model/product';
 import {ProductService} from "../service/product.service";
-import {ActivatedRoute, ParamMap} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
+import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-product-edit',
@@ -10,32 +11,32 @@ import {ActivatedRoute, ParamMap} from "@angular/router";
 })
 export class ProductEditComponent implements OnInit {
   productForm: FormGroup;
-  id: number;
 
-  constructor(private productService: ProductService,
-              private activatedRoute: ActivatedRoute) {
-    this.activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
-      this.id = +paramMap.get('id');
-      const product = this.getProduct(this.id);
-      this.productForm = new FormGroup({
-        id: new FormControl(product.id),
-        name: new FormControl(product.name),
-        price: new FormControl(product.price),
-        description: new FormControl(product.description),
-      });
-    });
+  productDetail: Product;
+  index: number;
+
+  constructor(private _formBuilder: FormBuilder,
+              private _productService: ProductService,
+              private _activatedRoute: ActivatedRoute,
+              private _router: Router) {
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.index = (this._activatedRoute.snapshot.params['index']) + 1;
+    this.productDetail = this._productService.findById(this.index);
+    this.productForm = this._formBuilder.group({
+      id: new FormControl(this.productDetail.id),
+      name: new FormControl(this.productDetail.name),
+      price: new FormControl(this.productDetail.price),
+      description: new FormControl(this.productDetail.description),
+    })
+
   }
 
-  getProduct(id: number) {
-    return this.productService.findById(id);
-  }
-
-  updateProduct(id: number) {
+  update() {
     const product = this.productForm.value;
-    this.productService.updateProduct(id, product);
-    alert('Cập nhật thành công');
+    this._productService.update(product);
+    this._router.navigate(['/product/list']);
   }
+
 }

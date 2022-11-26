@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import {DictionaryService} from "../service/dictionary.service";
+import {Component, OnInit} from "@angular/core";
+import {DictionaryService} from "../dictionary.service";
 import {ActivatedRoute} from "@angular/router";
-import {Iword} from "../model/iword";
+import {IWord} from "../model/iword";
+
 
 @Component({
   selector: 'app-dictionary-detail',
@@ -9,20 +10,15 @@ import {Iword} from "../model/iword";
   styleUrls: ['./dictionary-detail.component.css']
 })
 export class DictionaryDetailComponent implements OnInit {
-  translatedWord: Iword;
-  index: number;
+  wordDetail: IWord;
+  word: string;
 
-  constructor(private _dictionaryService: DictionaryService,
-              private _activatedRoute: ActivatedRoute) {
-  }
+  constructor( private _dictionaryService: DictionaryService,
+               private _activatedRoute: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.getMeanWord();
-
+    this.word = this._activatedRoute.snapshot.params['word'];
+    this.wordDetail = this._dictionaryService.findByWord(this.word);
   }
 
-  private getMeanWord() {
-    this.index = this._activatedRoute.snapshot.params['index'];
-    this.translatedWord = this._dictionaryService.getMeanWordByIndex(this.index);
-  }
 }

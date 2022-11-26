@@ -1,8 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
 import {ProductService} from "../service/product.service";
-import {ActivatedRoute} from "@angular/router";
-import {Product} from "../model/product";
 
 @Component({
   selector: 'app-product-create',
@@ -17,14 +15,15 @@ export class ProductCreateComponent implements OnInit {
     description: new FormControl(),
   });
 
-  constructor(private _productService: ProductService) { }
+  constructor(private _productService: ProductService) {
+  }
 
   ngOnInit(): void {
-     }
-submit(){
+  }
+
+  submit() {
     const product = this.productForm.value;
     this._productService.saveProduct(product);
     this.productForm.reset();
-}
-
+  }
 }

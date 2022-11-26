@@ -14,23 +14,30 @@ import {RatingBarComponent} from './rating-bar/rating-bar.component';
 import {CountdownTimerComponent} from './countdown-timer/countdown-timer.component';
 import {RegisterComponent} from './register/register.component';
 import {LoginComponent} from './login/login.component';
-import {RouterModule, Routes} from "@angular/router";
 import {ProductCreateComponent} from './product_management/product-create/product-create.component';
 import {ProductListComponent} from './product_management/product-list/product-list.component';
 import { ProductEditComponent } from './product_management/product-edit/product-edit.component';
 import { DictionaryComponent } from './dictionary/dictionary.component';
 import { DictionaryPageComponent } from './dictionary/dictionary-page/dictionary-page.component';
 import { DictionaryDetailComponent } from './dictionary/dictionary-detail/dictionary-detail.component';
+import {DictionaryRoutingRoutingModule} from "./dictionary/dictionary-routing/dictionary-routing-routing.module";
+import {RouterModule} from "@angular/router";
 
 /*an array that will eventually hold route definitions*/
 
-const routes: Routes = [{
+/*const routes: Routes = [{
   path: 'product/list',
-  component: ProductListComponent},
+  component: ProductListComponent
+},{
+  path: 'product/list/:index',
+  component: ProductListComponent
+},
   {path: 'product/create',
   component: ProductCreateComponent},
-  {path: 'edit/:index', component: ProductCreateComponent}]
+  {path: 'edit/:index',
+  component: ProductEditComponent}]*/
 
+// @ts-ignore
 // @ts-ignore
 // @ts-ignore
 @NgModule({
@@ -58,12 +65,13 @@ const routes: Routes = [{
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(routes),
+    DictionaryRoutingRoutingModule,
+    RouterModule
+    /*   RouterModule.forRoot(routes),*/
   ],
   providers: [],
   bootstrap: [AppComponent],
-  exports: [RouterModule
-  ]
+  // exports: [RouterModule]
 })
 export class AppModule {
 }

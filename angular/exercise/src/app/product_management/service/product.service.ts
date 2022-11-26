@@ -38,18 +38,21 @@ export class ProductService {
     this.products.push(product);
   }
 
-  findById(index: number) {
+  findById(id: number) {
     for (let i = 0; i < this.products.length; i++) {
-      if (this.products[i].id == index) return this.products[i];
-    }
-    return null;
-  }
-  updateProduct(index: number, product: Product) {
-    for (let i = 0; i < this.products.length; i++){
-      if (this.products[i].id == index){
-        this.products[i] = product;
-        alert('Cập nhật thành công!')
+      if (this.products[i].id == id) {
+        return this.products[i];
       }
     }
+    return undefined;
+  }
+
+  update(product: Product) {
+    this.products[product.id - 1] = product;
+  }
+
+  deleteProduct(index: number) {
+    this.products.splice(index, 1);
   }
 }
+

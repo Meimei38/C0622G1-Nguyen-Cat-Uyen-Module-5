@@ -1,14 +1,18 @@
-<h1>Dictionary</h1>
-<table>
-  <tr>
-    <td>STT</td>
-    <td>Word</td>
-    <td>Translate</td>
-    <td colspan="2"></td>
-  </tr>
-  <tr *ngFor="let word of words; index as i">
-    <td>{{i + 1}}</td>
-    <td>{{word.word}}</td>
-    <td><a [routerLink]="['/dictionary/detail',i]">Translate</a></td>
-  </tr>
-</table>
+<div class="container">
+  <h1>DICTIONARY</h1>
+  <table class="table table-bordered table-warning">
+    <thead>
+    <tr>
+      <td> Từ</td>
+      <td> Nghĩa của từ</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of words" [routerLink]="['/detail',item.word]">
+      <td>{{item.word}}</td>
+      <td>{{item.mean}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
