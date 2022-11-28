@@ -1,0 +1,16 @@
+{
+  "category": [
+    {
+    "id": 0,
+    "name": "Chưa xếp loại"
+  },
+    {
+      "id": "1",
+      "name": "Điện thoại"
+    },
+    {
+      "id": "2",
+      "name": "Tablet"
+    }
+  ]
+}

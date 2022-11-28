@@ -8,16 +8,18 @@
         <th>Tên</th>
         <th>Giá</th>
         <th>Mô tả</th>
+        <th>Loại sản phẩm</th>
         <th>Xóa</th>
       </tr>
       </thead>
       <tbody>
       <tr *ngFor="let product of products; index as i">
         <td>{{i + 1}}</td>
-        <td [routerLink]="['/edit',i]">{{product.name}}</td>
+        <td [routerLink]="['/edit',product.id]">{{product.name}}</td>
         <td>{{product.price}}</td>
         <td>{{product.description}}</td>
-        <td><button [routerLink]="['/product/list', i]" > Xóa</button> </td>
+        <td>{{product.category.name}}</td>
+        <td><button [routerLink]="['/product/list',product.id]" > Xóa</button> </td>
       </tr>
       </tbody>
 

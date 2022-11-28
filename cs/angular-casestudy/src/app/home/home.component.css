@@ -1,0 +1,65 @@
+#furama-welcome {
+  font-size: 50px;
+  font-family: "Copperplate";
+  /*  text-shadow: 0 0 1em #b7882d;*/
+  background: url("src/assets/media/yellow-1845394__480.jpg");
+  background-size: cover;
+  color: #fff;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  width: 420px;
+  padding-right: 0;
+
+}
+.display-1{
+  width: 480px;
+}
+
+
+video {
+  width: 98.8vw;
+  height: 100vh;
+  object-fit: cover;
+  border: none;
+}
+.container{
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  margin-right: 10px;
+}
+.text-box{
+  position: absolute;
+  top: 35%;
+  right: -40%;
+  display: flex;
+  width: 50%;
+  flex-wrap: wrap;
+  word-wrap: break-word;
+  padding-right: 10px;
+
+}
+
+.text-box h1{
+  font-size: 90px;
+  font-weight: 600;
+  line-height: 100px;
+  word-wrap: break-word;
+  width: 420px;
+}
+.text-box h4{
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 36px;
+  padding-top: 10px;
+  padding-bottom: 16px;
+}
+
+body{
+  background-image: url("src/assets/media/BG2.jpg") ;
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-attachment: fixed;
+}
+

@@ -18,8 +18,19 @@
       <td><input type="text" formControlName="description"></td>
     </tr>
     <tr>
+      <td> Loại sản phẩm</td>
+      <td>
+        <select  formControlName="category">
+          <option *ngFor="let item of categories" [ngValue]="item">{{item.name}}</option>
+        </select>
+      </td>
+
+    </tr>
+    <tr>
       <td></td>
-      <td><button>Tạo mới</button></td>
+      <td>
+        <button>Tạo mới</button>
+      </td>
     </tr>
   </table>
 </form>

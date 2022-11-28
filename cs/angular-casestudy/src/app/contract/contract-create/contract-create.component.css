@@ -1,0 +1,35 @@
+table {
+  background-color: #126c66;
+  border: 1px solid white;
+  width: 100vh;
+
+}
+
+table thead, th, td {
+  color: white;
+  padding-left: 20px !important;
+  text-align: center;
+}
+
+tr:hover {
+  background-color: darkcyan;
+
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+
+.page-item.active .page-link {
+  background-color: #046056;
+  color: white;
+}
+
+#closeSaveContract{
+  margin-left: 41%;
+}
+#closeContract {
+  margin-right: 5px;
+}

@@ -22,6 +22,14 @@ import { DictionaryPageComponent } from './dictionary/dictionary-page/dictionary
 import { DictionaryDetailComponent } from './dictionary/dictionary-detail/dictionary-detail.component';
 import {DictionaryRoutingRoutingModule} from "./dictionary/dictionary-routing/dictionary-routing-routing.module";
 import {RouterModule} from "@angular/router";
+import {HttpClientModule} from "@angular/common/http";
+import { CategoryCreateComponent } from './product_management/category/category-create/category-create.component';
+import { CategoryEditComponent } from './product_management/category/category-edit/category-edit.component';
+import { CategoryListComponent } from './product_management/category/category-list/category-list.component';
+import {CategoryRootingModule} from "./product_management/category/category-rooting.module";
+import {ProductRoutingModule} from "./product_management/product/product-routing.module";
+import { TodoComponent } from './todo/todo.component';
+
 
 /*an array that will eventually hold route definitions*/
 
@@ -60,15 +68,21 @@ import {RouterModule} from "@angular/router";
     DictionaryComponent,
     DictionaryPageComponent,
     DictionaryDetailComponent,
+    CategoryCreateComponent,
+    CategoryEditComponent,
+    CategoryListComponent,
+    TodoComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    DictionaryRoutingRoutingModule,
-    RouterModule
+   /* DictionaryRoutingRoutingModule,*/
+    RouterModule,
+    HttpClientModule,
     /*   RouterModule.forRoot(routes),*/
-  ],
+  CategoryRootingModule,
+  ProductRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
   // exports: [RouterModule]

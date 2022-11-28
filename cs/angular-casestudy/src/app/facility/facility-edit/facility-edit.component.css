@@ -1,0 +1,19 @@
+.main {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  background-color: #bee3d9;
+}
+body{
+  background-image: url("src/assets/media/BG2.jpg") ;
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-attachment: fixed;
+}

@@ -1,0 +1,153 @@
+<body>
+<div class="row p-5 px-5">
+
+
+  <h1>
+    Create Contract
+  </h1>
+  <div>
+    <form class="w-50 border border-2 border-success p-3  rounded" style="margin-left: 25%">
+      <div class="form-group">
+        <label class="h6" for="facility">Facility name:</label>
+        <div class="input-group">
+          <select id="facility" class="form-select">
+            <option></option>
+            <option></option>
+            <option></option>
+          </select>
+          <span class="input-group-text"><i class="fa-solid fa-file-signature"></i></span>
+        </div>
+      </div>
+
+      <div class="mt-3 form-group">
+        <label class="h6" for="employee">Employee name:</label>
+        <div class="input-group">
+          <select id="employee" class="form-control">
+            <option></option>
+            <option></option>
+            <option></option>
+          </select>
+          <span class="input-group-text"><i class="fa-solid fa-person-circle-question"></i></span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="h6" for="customer">Customer Name:</label>
+        <div class="input-group">
+          <select id="customer" class="form-control">
+            <option></option>
+            <option></option>
+            <option></option>
+          </select>
+          <span class="input-group-text"><i class="fa-solid fa-person-circle-question"></i></span>
+        </div>
+      </div>
+
+      <div class="mt-3 form-group">
+        <label for="startDate" class="h6">Start Date:</label>
+        <input type="date" id="startDate" class="form-control"
+               required/>
+      </div>
+
+      <div class="mt-3 form-group" id="endDateForm">
+        <label for="endDate" class="h6">End Date:</label>
+        <input type="date" id="endDate" class="form-control" required/>
+      </div>
+
+      <div class="mt-3 form-group">
+        <label for="deposit" class="h6">Deposit:</label>
+        <div class="input-group">
+          <input type="number" id="deposit" class="form-control"
+                 placeholder="Enter deposit" required/>
+          <span class="input-group-text"><i class="fa-solid fa-money-bill-wave"></i></span>
+        </div>
+      </div>
+
+
+      <input type="text" hidden>
+
+      <!--Modal add new attach facility-->
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-success m-1 mx-2" style="width: 5%" data-bs-toggle="modal"
+              data-bs-target="#addAttachFacilityModal">
+        +
+      </button>
+
+      <!---->
+      <div class="row">
+        <table class="table table-sm w-50" style="margin-left: 25%" id="showAttachDetails">
+          <tr>
+            <th> Attach Facility</th>
+            <th> Cost</th>
+            <th> Quantity</th>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+
+        </table>
+      </div>
+
+
+      <!---->
+
+      <div id="closeSaveContract">
+        <button type="button" class="btn btn-secondary" id="closeContract" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button type="submit" class="btn btn-success" id="saveContract">Save</button>
+      </div>
+    </form>
+  </div>
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="addAttachFacilityModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+       aria-hidden="true">
+    <div class="modal-dialog border-success modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-success" id="exampleModalLabel">Add Attach Facility</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="bodyModalAttach">
+          <form>
+            <table class="table table-sm">
+              <tr>
+                <th> Attach Facility</th>
+                <th> Cost</th>
+                <th> Quantity</th>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td><input type="number" placeholder="Enter quantity"></td>
+              </tr>
+              <input hidden id="size">
+            </table>
+            <input type="reset" hidden id="facilityList">
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button id="closeAttach" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close
+          </button>
+          <button type="submit" id="saveAttach" class="btn btn-success" data-bs-dismiss="modal">Save changes
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>

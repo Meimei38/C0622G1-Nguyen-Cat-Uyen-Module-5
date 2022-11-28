@@ -1,0 +1,53 @@
+
+.mainList {
+  margin-top: 80px;
+  margin-left: 258px;
+  width: 75%;
+}
+
+h2 {
+  margin-top: 80px;
+  text-align: center;
+}
+
+#title {
+  font-size: 50px;
+  font-weight: bold;
+  font-family: "Copperplate";
+  color: #1c7572;
+  text-shadow: 1px 1px 0.3em white;
+
+}
+
+#fullPage {
+
+  background-color: #dbece3;
+}
+
+i {
+  color: #1c7572;
+  margin-right: 10px;
+  margin-left: 5px;
+}
+
+.card {
+  width: 25rem;
+  height: 25rem;
+  box-shadow: 4px 4px 0.7em darkgray;
+}
+
+.read-more {
+  margin-left: 255px;
+}
+
+img {
+  height: 214px;
+}
+
+.card-body {
+  padding-top: 30px;
+}
+
+.card-text {
+  padding-top: 30px;
+}
