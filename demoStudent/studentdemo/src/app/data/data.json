@@ -1,0 +1,102 @@
+{
+  "students": [
+    {
+      "name": "Renato Hehe",
+      "gender": 1,
+      "dateOfBirth": "1955-11-08",
+      "email": "rdyble0@blogger.com",
+      "address": "5229 Buena Vista Crossing",
+      "class": {
+        "id": 1,
+        "name": "C04"
+      },
+      "id": 1
+    },
+    {
+      "name": "Audy Huhu",
+      "gender": 0,
+      "dateOfBirth": "1939-08-17",
+      "email": "alosbie111@marketwatch.com",
+      "address": "2166333 Dennis Circle",
+      "class": {
+        "id": 2,
+        "name": "C05"
+      },
+      "id": 2
+    },
+    {
+      "id": 6,
+      "name": "Derrick Finessy",
+      "gender": 1,
+      "dateOfBirth": "1930-01-25",
+      "email": "dfinessy5@sohu.com",
+      "address": "8064 Northland Junction",
+      "class": {
+        "id": 3,
+        "name": "C06"
+      }
+    },
+    {
+      "id": 7,
+      "name": "Pat Cordaroy",
+      "gender": 0,
+      "dateOfBirth": "1962-08-29",
+      "email": "pcordaroy6@infoseek.co.jp",
+      "address": "8 Namekagon Parkway",
+      "class": {
+        "id": 1,
+        "name": "C04"
+      }
+    },
+    {
+      "id": 8,
+      "name": "Tobias Meriott",
+      "gender": 1,
+      "dateOfBirth": "1932-05-06",
+      "email": "tmeriott7@hhs.gov",
+      "address": "61048 Sugar Circle",
+      "class": {
+        "id": 2,
+        "name": "C05"
+      }
+    },
+    {
+      "id": 9,
+      "name": "Sanders Late",
+      "gender": 0,
+      "dateOfBirth": "1943-01-09",
+      "email": "slate8@de.vu",
+      "address": "0 Spaight Lane",
+      "class": {
+        "id": 3,
+        "name": "C06"
+      }
+    },
+    {
+      "id": 10,
+      "name": "Ashlee Molan",
+      "gender": 1,
+      "dateOfBirth": "1954-02-11",
+      "email": "amolan9@list-manage.com",
+      "address": "1823 Meadow Vale Pass",
+      "class": {
+        "id": 1,
+        "name": "C04"
+      }
+    }
+  ],
+  "class": [
+    {
+      "id": 1,
+      "name": "C04"
+    },
+    {
+      "id": 2,
+      "name": "C05"
+    },
+    {
+      "id": 3,
+      "name": "C06"
+    }
+  ]
+}

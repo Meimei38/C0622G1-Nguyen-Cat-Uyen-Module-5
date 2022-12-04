@@ -1,0 +1,116 @@
+<div class="container-fluid">
+<div class="row" style="margin-top: 50px">
+
+  <h1>
+    Student List
+  </h1>
+
+</div>
+<div class="row d-flex" style="padding-left: 30px; padding-right: 30px">
+  <div style="width: 50%; float: left">
+    <button routerLink="/student/create" class="btn btn-success" type="submit" id="add"> Add student</button>
+  </div>
+  <div style="width:50%; margin-right: 0; margin-bottom: 50px" role="search">
+    <div class="row px-0 mx-0">
+      <div class="col-3">
+
+      </div>
+      <div class="col-3" style="margin-left: -4px">
+        <input class="form-control me-2" type="text" placeholder="Enter student name" [(ngModel)]="studentNameSearch"
+               aria-label="Search">
+      </div>
+
+      <div class="col-3">
+        <select class="form-control me-2" [(ngModel)]="classSearch"
+                aria-label="Search">
+          <option value="">Choose Class</option>
+          <option *ngFor="let item of classList, index as i" [ngValue]="item.id">{{item.name}}</option>
+        </select>
+
+      </div>
+
+      <div class="col-3 px-0" style="right: 0">
+        <button class="btn btn-warning" id="submit" (click)="search()">Search</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+<div class="main">
+  <table id="list" class="table w-100 table-success table-bordered table-striped">
+    <thead>
+    <tr>
+      <th>No.</th>
+      <th>Name</th>
+      <th>Date of Birth</th>
+      <th>Gender</th>
+      <th>Email</th>
+      <th>Address</th>
+      <th>Class</th>
+      <th> Edit</th>
+      <th> Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of studentList| paginate: {itemsPerPage:count,currentPage:page}, index as i" >
+      <td>{{i + 1 + (page-1)*count}}</td>
+      <td>{{item.name}}</td>
+      <td>{{item.dateOfBirth}}</td>
+      <td [ngSwitch]="item.gender">
+        <span *ngSwitchCase="0">Male</span>
+        <span *ngSwitchCase="1">Female</span>
+        <span *ngSwitchDefault>Others</span>
+      </td>
+      <td>{{item.email}}</td>
+      <td>{{item.address}}</td>
+      <td>{{item.class.name}}</td>
+      <td class="text-center">
+        <a routerLink="/student/edit/{{item.id}}">
+          <button class="btn btn-success btn-outline-secondary btn-sm">
+            <span class="fa-solid fa-user-pen text-light h6 m-auto px-2"></span>
+          </button>
+        </a>
+      </td>
+      <td class="text-center">
+        <button data-bs-toggle="modal" data-bs-target="#deleteStudent"
+                class="btn btn-danger btn-outline-secondary btn-sm">
+          <span class="fa-solid fa-person-circle-minus text-light h6 m-auto px-2" (click)="infoDelete(item.name, item.id, item.class.name)"></span>
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<div class="text-right" style="padding-left: 40%">
+  <pagination-controls (pageChange)="page = $event"></pagination-controls>
+</div>
+
+<div style="padding-left: 30px">
+
+</div>
+
+<!--delete modal-->
+<div class="modal fade" id="deleteStudent" tabindex="-1" aria-labelledby="exampleModalLabel1"
+     aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content modalCSS">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLabel1">You really want to delete?</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+        <span class="h6">Student:</span><strong class="text-danger ps-2">{{studentNameDelete}}</strong>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-danger" (click)="delete(studentIdDelete,studentNameDelete)" data-bs-dismiss="modal">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!---->
+
+
+</div>

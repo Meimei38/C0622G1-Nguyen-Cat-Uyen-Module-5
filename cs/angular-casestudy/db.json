@@ -1,0 +1,795 @@
+{
+  "facilities": [
+    {
+      "id": 1,
+      "facilityName": "Studio Queen Script",
+      "facilityArea": 100,
+      "rentCost": 500000,
+      "maxPeople": 2,
+      "standardRoom": "",
+      "descriptionOtherConvenience": "",
+      "poolArea": 0,
+      "numberOfFloors": 0,
+      "facilityFree": "Massage người mù",
+      "rentType": {
+        "id": 1,
+        "rentTypeName": "Giờ"
+      },
+      "facilityType": {
+        "id": 3,
+        "facilityTypeName": "Room"
+      },
+      "facilityImage": "https://www.furama.com/images/FRF_studioroom_ibe4.jpg"
+    },
+    {
+      "facilityName": "Superior Angular",
+      "facilityArea": 150,
+      "rentCost": 400000,
+      "maxPeople": 2,
+      "standardRoom": "",
+      "descriptionOtherConvenience": "",
+      "poolArea": 0,
+      "numberOfFloors": 0,
+      "facilityFree": "Massage người mù",
+      "rentType": {
+        "id": 1,
+        "rentTypeName": "Giờ"
+      },
+      "facilityType": {
+        "id": 3,
+        "facilityTypeName": "Room"
+      },
+      "facilityImage": "https://www.furama.com/images/ibe_Superior.jpg",
+      "id": 2
+    },
+    {
+      "id": 3,
+      "facilityName": "Deluxe Ajax",
+      "facilityArea": 200,
+      "rentCost": 1000000,
+      "maxPeople": 3,
+      "standardRoom": "",
+      "descriptionOtherConvenience": "",
+      "poolArea": 0,
+      "numberOfFloors": 0,
+      "facilityFree": "Massage người mù",
+      "rentType": {
+        "id": 2,
+        "rentTypeName": "Ngày"
+      },
+      "facilityType": {
+        "id": 3,
+        "facilityTypeName": "Room"
+      },
+      "facilityImage": "https://www.furama.com/images/ibe-Deluxe-Room.jpg"
+    },
+    {
+      "id": 4,
+      "facilityName": "Villa Beach Back Jquery",
+      "facilityArea": 1200,
+      "rentCost": 7500000,
+      "maxPeople": 7,
+      "standardRoom": "Vip",
+      "descriptionOtherConvenience": "Có hồ bơi",
+      "poolArea": 80,
+      "numberOfFloors": 4,
+      "facilityFree": "",
+      "rentType": {
+        "id": 2,
+        "rentTypeName": "Ngày"
+      },
+      "facilityType": {
+        "id": 1,
+        "facilityTypeName": "Villa"
+      },
+      "facilityImage": "https://media-cdn.tripadvisor.com/media/vr-splice-j/02/8e/d7/b8.jpg"
+    },
+    {
+      "id": 5,
+      "facilityName": "Villa Beach Front Thymeleaf",
+      "facilityArea": 2000,
+      "rentCost": 10500000,
+      "maxPeople": 8,
+      "standardRoom": "Vip",
+      "descriptionOtherConvenience": "Có hồ bơi",
+      "poolArea": 100,
+      "numberOfFloors": 4,
+      "facilityFree": "",
+      "rentType": {
+        "id": 2,
+        "rentTypeName": "Ngày"
+      },
+      "facilityType": {
+        "id": 1,
+        "facilityTypeName": "Villa"
+      },
+      "facilityImage": "https://pix10.agoda.net/hotelImages/2601996/0/7b0a95ae1cbf0f0650ff89ff15cbfbfb.jpg?ca=7&ce=1&s=1024x768"
+    },
+    {
+      "id": 6,
+      "facilityName": "Spring Framework House 01",
+      "facilityArea": 500,
+      "rentCost": 7000000,
+      "maxPeople": 5,
+      "standardRoom": "Vip",
+      "descriptionOtherConvenience": "Có ghế tình yêu",
+      "poolArea": 0,
+      "numberOfFloors": 3,
+      "facilityFree": "",
+      "rentType": {
+        "id": 3,
+        "rentTypeName": "Tháng"
+      },
+      "facilityType": {
+        "id": 2,
+        "facilityTypeName": "House"
+      },
+      "facilityImage": "https://i.pinimg.com/736x/a7/b3/c6/a7b3c60afae4a89a3fb12fc8d054156d.jpg"
+    },
+    {
+      "id": 7,
+      "facilityName": "Family Room Static",
+      "facilityArea": 300,
+      "rentCost": 1500000,
+      "maxPeople": 4,
+      "standardRoom": "",
+      "descriptionOtherConvenience": "",
+      "poolArea": 0,
+      "numberOfFloors": 0,
+      "facilityFree": "Đánh bài quỳ vỏ mít",
+      "rentType": {
+        "id": 2,
+        "rentTypeName": "Ngày"
+      },
+      "facilityType": {
+        "id": 3,
+        "facilityTypeName": "Room"
+      },
+      "facilityImage": "https://www.furama.com/images/ibe_Family.jpg"
+    },
+    {
+      "id": 8,
+      "facilityName": "Premier Family Room",
+      "facilityArea": 300,
+      "rentCost": 1250000,
+      "maxPeople": 4,
+      "standardRoom": "",
+      "descriptionOtherConvenience": "",
+      "poolArea": 0,
+      "numberOfFloors": 0,
+      "facilityFree": "Dắt chó đi dạo",
+      "rentType": {
+        "id": 2,
+        "rentTypeName": "Ngày"
+      },
+      "facilityType": {
+        "id": 3,
+        "facilityTypeName": "Room"
+      },
+      "facilityImage": "https://www.furama.com/images/FRF_studioroom_ibe9.jpg"
+    },
+    {
+      "id": 9,
+      "facilityName": "Executive Suite",
+      "facilityArea": 150,
+      "rentCost": 350000,
+      "maxPeople": 2,
+      "standardRoom": "",
+      "descriptionOtherConvenience": "",
+      "poolArea": 0,
+      "numberOfFloors": 0,
+      "facilityFree": "Massage người mù",
+      "rentType": {
+        "id": 1,
+        "rentTypeName": "Giờ"
+      },
+      "facilityType": {
+        "id": 3,
+        "facilityTypeName": "Room"
+      },
+      "facilityImage": "https://www.furama.com/images/ibe_frf_Executive-Suite.jpg"
+    },
+    {
+      "facilityName": "Theme Suite Directive",
+      "facilityArea": 400,
+      "rentCost": 50000000,
+      "maxPeople": 3,
+      "standardRoom": "vip",
+      "descriptionOtherConvenience": "Có ghế tình yêu",
+      "poolArea": "",
+      "numberOfFloors": 1,
+      "facilityFree": "",
+      "rentType": {
+        "id": 4,
+        "rentTypeName": "Năm"
+      },
+      "facilityType": {
+        "id": 2,
+        "facilityTypeName": "House"
+      },
+      "facilityImage": "https://www.furama.com/images/ibe_Safari_Suite.jpg",
+      "id": 10
+    }
+  ],
+  "facilityTypes": [
+    {
+      "id": 1,
+      "facilityTypeName": "Villa"
+    },
+    {
+      "id": 2,
+      "facilityTypeName": "House"
+    },
+    {
+      "id": 3,
+      "facilityTypeName": "Room"
+    }
+  ],
+  "rentTypes": [
+    {
+      "id": 1,
+      "rentTypeName": "Giờ"
+    },
+    {
+      "id": 2,
+      "rentTypeName": "Ngày"
+    },
+    {
+      "id": 3,
+      "rentTypeName": "Tháng"
+    },
+    {
+      "id": 4,
+      "rentTypeName": "Năm"
+    }
+  ],
+  "customers": [
+    {
+      "id": 2,
+      "customerName": "Nguyễn Thanh Hải",
+      "customerBirthday": "1997-02-14",
+      "customerGender": 0,
+      "customerIdCard": "132314664",
+      "customerPhone": "0902222222",
+      "customerEmail": "haixinchao@gmail.com",
+      "customerAddress": "Duy Xuyên, Quảng Nam",
+      "customerType": {
+        "id": 5,
+        "customerTypeName": "Diamond"
+      }
+    },
+    {
+      "id": 3,
+      "customerName": "Nguyễn Thị Thoa",
+      "customerBirthday": "1998-12-12",
+      "customerGender": 0,
+      "customerIdCard": "132314543",
+      "customerPhone": "0903333333",
+      "customerEmail": "dong.mau.quy@gmail.com",
+      "customerAddress": "phường Mân Đàn, TT Huế",
+      "customerType": {
+        "id": 2,
+        "customerTypeName": "Silver"
+      }
+    },
+    {
+      "customerName": "Phạm Thế Sơn",
+      "customerBirthday": "1997-02-14",
+      "customerGender": 2,
+      "customerIdCard": "132314664",
+      "customerPhone": "0902222222",
+      "customerEmail": "sonsonson@gmail.com",
+      "customerAddress": "Cẩm Lệ, Đà Nẵng",
+      "customerType": {
+        "id": 3,
+        "customerTypeName": "Gold"
+      },
+      "id": 4
+    },
+    {
+      "customerName": "Hồ Văn Nam",
+      "customerBirthday": "1993-07-26",
+      "customerGender": 2,
+      "customerIdCard": "155515664",
+      "customerPhone": "0906666666",
+      "customerEmail": "ngoc.huyen@gmail.com",
+      "customerAddress": "núi Thần Tài, Quảng Nam",
+      "customerType": {
+        "id": 5,
+        "customerTypeName": "Diamond"
+      },
+      "id": 6
+    },
+    {
+      "id": 7,
+      "customerName": "Phạm Thế Sơn",
+      "customerBirthday": "1997-02-14",
+      "customerGender": 2,
+      "customerIdCard": "132314664",
+      "customerPhone": "0902222222",
+      "customerEmail": "sonsonson@gmail.com",
+      "customerAddress": "Cẩm Lệ, Đà Nẵng",
+      "customerType": {
+        "id": 5,
+        "customerTypeName": "Diamond"
+      }
+    },
+    {
+      "customerName": "Nguyễn Văn Phúc",
+      "customerBirthday": "1998-12-12",
+      "customerGender": 2,
+      "customerIdCard": "213521123",
+      "customerPhone": "0902314212",
+      "customerEmail": "naruto@gmail.com",
+      "customerAddress": "bản Yên Thành, Nghệ An",
+      "customerType": {
+        "id": 3,
+        "customerTypeName": "Gold"
+      },
+      "id": 8
+    },
+    {
+      "customerName": "Nguyễn Thanh Hải",
+      "customerBirthday": "1997-02-14",
+      "customerGender": 0,
+      "customerIdCard": "132314664",
+      "customerPhone": "0902222222",
+      "customerEmail": "haixinchao@gmail.com",
+      "customerAddress": "Duy Xuyên, Quảng Nam",
+      "customerType": {
+        "id": 4,
+        "customerTypeName": "Platinium"
+      },
+      "id": 9
+    },
+    {
+      "customerName": "Nguyen Cat Uyen",
+      "customerBirthday": "1997-08-03",
+      "customerGender": 1,
+      "customerIdCard": "123456789",
+      "customerPhone": "0906484501",
+      "customerEmail": "hoathachthaodn97@gmail.com",
+      "customerAddress": "69 Ton That Tung Street",
+      "customerType": {
+        "id": 1,
+        "customerTypeName": "Member"
+      },
+      "id": 10
+    },
+    {
+      "customerName": "Nguyễn Thanh Hải",
+      "customerBirthday": "1999-10-16",
+      "customerGender": 0,
+      "customerIdCard": "123456789",
+      "customerPhone": "0916484501",
+      "customerEmail": "hoathachthaodn97@gmail.com",
+      "customerAddress": "Quảng Nam",
+      "customerType": {
+        "id": 3,
+        "customerTypeName": "Gold"
+      },
+      "id": 11
+    },
+    {
+      "customerName": "Phạm Thế Sơn",
+      "customerBirthday": "1999-01-01",
+      "customerGender": 0,
+      "customerIdCard": "123456789",
+      "customerPhone": "0916484501",
+      "customerEmail": "hoathachthaodn97@gmail.com",
+      "customerAddress": "Cẩm Lệ, Đà Nẵng",
+      "customerType": {
+        "id": 2,
+        "customerTypeName": "Silver"
+      },
+      "id": 12
+    },
+    {
+      "customerName": "Nguyen Cat Uyen",
+      "customerBirthday": "1997-08-03",
+      "customerGender": 1,
+      "customerIdCard": "123456789",
+      "customerPhone": "0916484501",
+      "customerEmail": "hoathachthaodn97@gmail.com",
+      "customerAddress": "69 Ton That Tung Street",
+      "customerType": {
+        "id": 2,
+        "customerTypeName": "Silver"
+      },
+      "id": 13
+    }
+  ],
+  "customerTypes": [
+    {
+      "id": 1,
+      "customerTypeName": "Member"
+    },
+    {
+      "id": 2,
+      "customerTypeName": "Silver"
+    },
+    {
+      "id": 3,
+      "customerTypeName": "Gold"
+    },
+    {
+      "id": 4,
+      "customerTypeName": "Platinium"
+    },
+    {
+      "id": 5,
+      "customerTypeName": "Diamond"
+    }
+  ],
+  "contracts": [
+    {
+      "id": 1,
+      "startDate": "2022-10-20",
+      "endDate": "2022-10-21",
+      "deposit": 1000000,
+      "customer": {
+        "id": 4,
+        "customerName": "Phạm Thế Sơn",
+        "customerBirthday": "1997-02-14",
+        "customerGender": 2,
+        "customerIdCard": "132314664",
+        "customerPhone": "0902222222",
+        "customerEmail": "sonsonson@gmail.com",
+        "customerAddress": "Cẩm Lệ, Đà Nẵng",
+        "customerType": {
+          "id": 3,
+          "customerTypeName": "Gold"
+        }
+      },
+      "facility": {
+        "id": 5,
+        "facilityName": "Villa Beach Front Thymeleaf",
+        "facilityArea": 2000,
+        "rentCost": 10500000,
+        "maxPeople": 8,
+        "standardRoom": "Vip",
+        "descriptionOtherConvenience": "Có hồ bơi",
+        "poolArea": 100,
+        "numberOfFloors": 4,
+        "facilityFree": "",
+        "rentType": {
+          "id": 2,
+          "rentTypeName": "Ngày"
+        },
+        "facilityType": {
+          "id": 1,
+          "facilityTypeName": "Villa"
+        },
+        "facilityImage": "https://pix10.agoda.net/hotelImages/2601996/0/7b0a95ae1cbf0f0650ff89ff15cbfbfb.jpg?ca=7&ce=1&s=1024x768"
+      }
+    },
+    {
+      "id": 2,
+      "startDate": "2022-10-20",
+      "endDate": "2022-11-20",
+      "deposit": 1500000,
+      "customer": {
+        "id": 7,
+        "customerName": "Phạm Thế Sơn",
+        "customerBirthday": "1997-02-14",
+        "customerGender": 2,
+        "customerIdCard": "132314664",
+        "customerPhone": "0902222222",
+        "customerEmail": "sonsonson@gmail.com",
+        "customerAddress": "Cẩm Lệ, Đà Nẵng",
+        "customerType": {
+          "id": 5,
+          "customerTypeName": "Diamond"
+        }
+      },
+      "facility": {
+        "id": 6,
+        "facilityName": "Spring Framework House 01",
+        "facilityArea": 500,
+        "rentCost": 7000000,
+        "maxPeople": 5,
+        "standardRoom": "Vip",
+        "descriptionOtherConvenience": "Có ghế tình yêu",
+        "poolArea": 0,
+        "numberOfFloors": 3,
+        "facilityFree": "",
+        "rentType": {
+          "id": 3,
+          "rentTypeName": "Tháng"
+        },
+        "facilityType": {
+          "id": 2,
+          "facilityTypeName": "House"
+        },
+        "facilityImage": "https://i.pinimg.com/736x/a7/b3/c6/a7b3c60afae4a89a3fb12fc8d054156d.jpg"
+      }
+    },
+    {
+      "id": 3,
+      "startDate": "2022-10-21",
+      "endDate": "2022-10-22",
+      "deposit": 0,
+      "customer": {
+        "id": 1,
+        "customerName": "Nguyễn Văn Huy",
+        "customerBirthday": "1998-10-20",
+        "customerGender": 2,
+        "customerIdCard": "132316358",
+        "customerPhone": "0905555555",
+        "customerEmail": "huyne@gmail.com",
+        "customerAddress": "Bản Đôn, Đắk Lắk",
+        "customerType": {
+          "id": 3,
+          "customerTypeName": "Gold"
+        }
+      },
+      "facility": {
+        "id": 4,
+        "facilityName": "Villa Beach Back Jquery",
+        "facilityArea": 1200,
+        "rentCost": 7500000,
+        "maxPeople": 7,
+        "standardRoom": "Vip",
+        "descriptionOtherConvenience": "Có hồ bơi",
+        "poolArea": 80,
+        "numberOfFloors": 4,
+        "facilityFree": "",
+        "rentType": {
+          "id": 2,
+          "rentTypeName": "Ngày"
+        },
+        "facilityType": {
+          "id": 1,
+          "facilityTypeName": "Villa"
+        },
+        "facilityImage": "https://media-cdn.tripadvisor.com/media/vr-splice-j/02/8e/d7/b8.jpg"
+      }
+    },
+    {
+      "id": 4,
+      "startDate": "2022-10-22",
+      "endDate": "2022-10-23",
+      "deposit": 800000,
+      "customer": {
+        "id": 6,
+        "customerName": "Nguyễn Văn Huy",
+        "customerBirthday": "1998-10-20",
+        "customerGender": 2,
+        "customerIdCard": "132316358",
+        "customerPhone": "0905555555",
+        "customerEmail": "huyne@gmail.com",
+        "customerAddress": "Bản Đôn, Đắk Lắk",
+        "customerType": {
+          "id": 5,
+          "customerTypeName": "Diamond"
+        }
+      },
+      "facility": {
+        "id": 5,
+        "facilityName": "Villa Beach Front Thymeleaf",
+        "facilityArea": 2000,
+        "rentCost": 10500000,
+        "maxPeople": 8,
+        "standardRoom": "Vip",
+        "descriptionOtherConvenience": "Có hồ bơi",
+        "poolArea": 100,
+        "numberOfFloors": 4,
+        "facilityFree": "",
+        "rentType": {
+          "id": 2,
+          "rentTypeName": "Ngày"
+        },
+        "facilityType": {
+          "id": 1,
+          "facilityTypeName": "Villa"
+        },
+        "facilityImage": "https://pix10.agoda.net/hotelImages/2601996/0/7b0a95ae1cbf0f0650ff89ff15cbfbfb.jpg?ca=7&ce=1&s=1024x768"
+      }
+    },
+    {
+      "id": 5,
+      "startDate": "2022-10-23",
+      "endDate": "2022-10-24",
+      "deposit": 0,
+      "customer": {
+        "id": 5,
+        "customerName": "Nguyễn Văn Huy",
+        "customerBirthday": "1998-10-20",
+        "customerGender": 2,
+        "customerIdCard": "132316358",
+        "customerPhone": "0905555555",
+        "customerEmail": "huyne@gmail.com",
+        "customerAddress": "Bản Đôn, Đắk Lắk",
+        "customerType": {
+          "id": 1,
+          "customerTypeName": "Member"
+        }
+      },
+      "facility": {
+        "id": 4,
+        "facilityName": "Villa Beach Back Jquery",
+        "facilityArea": 1200,
+        "rentCost": 7500000,
+        "maxPeople": 7,
+        "standardRoom": "Vip",
+        "descriptionOtherConvenience": "Có hồ bơi",
+        "poolArea": 80,
+        "numberOfFloors": 4,
+        "facilityFree": "",
+        "rentType": {
+          "id": 2,
+          "rentTypeName": "Ngày"
+        },
+        "facilityType": {
+          "id": 1,
+          "facilityTypeName": "Villa"
+        },
+        "facilityImage": "https://media-cdn.tripadvisor.com/media/vr-splice-j/02/8e/d7/b8.jpg"
+      }
+    },
+    {
+      "id": 6,
+      "startDate": "2022-10-20",
+      "endDate": "2022-10-21",
+      "deposit": 120000,
+      "customer": {
+        "id": 2,
+        "customerName": "Phạm Thế Sơn",
+        "customerBirthday": "1997-02-14",
+        "customerGender": 2,
+        "customerIdCard": "132314664",
+        "customerPhone": "0902222222",
+        "customerEmail": "sonsonson@gmail.com",
+        "customerAddress": "Cẩm Lệ, Đà Nẵng",
+        "customerType": {
+          "id": 5,
+          "customerTypeName": "Diamond"
+        }
+      },
+      "facility": {
+        "id": 5,
+        "facilityName": "Villa Beach Front Thymeleaf",
+        "facilityArea": 2000,
+        "rentCost": 10500000,
+        "maxPeople": 8,
+        "standardRoom": "Vip",
+        "descriptionOtherConvenience": "Có hồ bơi",
+        "poolArea": 100,
+        "numberOfFloors": 4,
+        "facilityFree": "",
+        "rentType": {
+          "id": 2,
+          "rentTypeName": "Ngày"
+        },
+        "facilityType": {
+          "id": 1,
+          "facilityTypeName": "Villa"
+        },
+        "facilityImage": "https://pix10.agoda.net/hotelImages/2601996/0/7b0a95ae1cbf0f0650ff89ff15cbfbfb.jpg?ca=7&ce=1&s=1024x768"
+      }
+    },
+    {
+      "id": 7,
+      "startDate": "2022-10-27",
+      "endDate": "2022-10-28",
+      "deposit": 0,
+      "customer": {
+        "id": 2,
+        "customerName": "Nguyễn Thanh Hải",
+        "customerBirthday": "1997-02-14",
+        "customerGender": 0,
+        "customerIdCard": "132314664",
+        "customerPhone": "0902222222",
+        "customerEmail": "haixinchao@gmail.com",
+        "customerAddress": "Duy Xuyên, Quảng Nam",
+        "customerType": {
+          "id": 5,
+          "customerTypeName": "Diamond"
+        }
+      },
+      "facility": {
+        "id": 4,
+        "facilityName": "Villa Beach Back Jquery",
+        "facilityArea": 1200,
+        "rentCost": 7500000,
+        "maxPeople": 7,
+        "standardRoom": "Vip",
+        "descriptionOtherConvenience": "Có hồ bơi",
+        "poolArea": 80,
+        "numberOfFloors": 4,
+        "facilityFree": "",
+        "rentType": {
+          "id": 2,
+          "rentTypeName": "Ngày"
+        },
+        "facilityType": {
+          "id": 1,
+          "facilityTypeName": "Villa"
+        },
+        "facilityImage": "https://media-cdn.tripadvisor.com/media/vr-splice-j/02/8e/d7/b8.jpg"
+      }
+    },
+    {
+      "id": 8,
+      "startDate": "2022-10-27",
+      "endDate": "2022-10-28",
+      "deposit": 0,
+      "customer": {
+        "customerName": "Hồ Thị Hiền",
+        "customerBirthday": "2000-03-20",
+        "customerGender": 1,
+        "customerIdCard": "132222264",
+        "customerPhone": "0904444444",
+        "customerEmail": "hienho@gmail.com",
+        "customerAddress": "Quảng Nam",
+        "customerType": {
+          "id": 3,
+          "customerTypeName": "Gold"
+        },
+        "id": 4
+      },
+      "facility": {
+        "facilityName": "Theme Suite Directive",
+        "facilityArea": 400,
+        "rentCost": 50000000,
+        "maxPeople": 3,
+        "standardRoom": "vip",
+        "descriptionOtherConvenience": "Có phục vụ phòng",
+        "poolArea": "",
+        "numberOfFloors": 1,
+        "facilityFree": "",
+        "rentType": {
+          "id": 4,
+          "rentTypeName": "Năm"
+        },
+        "facilityType": {
+          "id": 2,
+          "facilityTypeName": "House"
+        },
+        "facilityImage": "https://www.furama.com/images/ibe_Safari_Suite.jpg",
+        "id": 10
+      }
+    },
+    {
+      "id": 9,
+      "startDate": "2022-10-27",
+      "endDate": "2022-10-28",
+      "deposit": 200000,
+      "customer": {
+        "customerName": "Võ Văn An",
+        "customerBirthday": "2001-01-20",
+        "customerGender": 0,
+        "customerIdCard": "123456789",
+        "customerPhone": "0901111111",
+        "customerEmail": "vovanan@gmail.com",
+        "customerAddress": "Gia Lai",
+        "customerType": {
+          "id": 3,
+          "customerTypeName": "Gold"
+        },
+        "id": 1
+      },
+      "facility": {
+        "facilityName": "Theme Suite Directive",
+        "facilityArea": 400,
+        "rentCost": 50000000,
+        "maxPeople": 3,
+        "standardRoom": "vip",
+        "descriptionOtherConvenience": "Có giường size King",
+        "poolArea": "",
+        "numberOfFloors": 1,
+        "facilityFree": "",
+        "rentType": {
+          "id": 4,
+          "rentTypeName": "Năm"
+        },
+        "facilityType": {
+          "id": 2,
+          "facilityTypeName": "House"
+        },
+        "facilityImage": "https://www.furama.com/images/ibe_Safari_Suite.jpg",
+        "id": 10
+      }
+    }
+  ]
+}

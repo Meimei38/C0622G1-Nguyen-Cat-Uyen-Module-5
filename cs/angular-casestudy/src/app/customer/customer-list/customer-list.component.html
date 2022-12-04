@@ -7,35 +7,34 @@
 
 </div>
 <div class="row d-flex" style="padding-left: 30px; padding-right: 30px">
-  <form method="get" style="width: 50%; float: left">
+  <div style="width: 50%; float: left">
     <input type="hidden" name="action" value="add">
-    <button class="btn" type="submit" id="add"> Add customer</button>
-  </form>
-  <form style="width:50%; margin-right: 0; padding-left: 80px">
-    <input type="hidden" name="action" value="search">
+    <button routerLink="/customer/create" class="btn" type="submit" id="add"> Add customer</button>
+  </div>
+  <div style="width:50%; margin-right: 0" role="search">
     <div class="row px-0 mx-0">
-      <div class="col-3" style="margin-left: 208px">
-        <input type="text" name="searchName" class="form-control" placeholder="Name">
+      <div class="col-3" style="margin-left: -4px">
+        <input class="form-control me-2" type="text" placeholder="Nhập tên.." aria-label="Search"
+               [(ngModel)]="customerNameSearch">
       </div>
       <div class="col-3">
-        <select class="form-select" name="searchCustomerType" id="searchCustomerType">
-          <option value="">Customer Type</option>
-          <option value="1">Diamond</option>
-          <option value="2">Platinum</option>
-          <option value="4">Gold</option>
-          <option value="5">Silver</option>
-          <option value="6">Member</option>
-        </select>
+        <input class="form-control me-2" type="text" placeholder="Nhập địa chỉ.." aria-label="Search"
+               [(ngModel)]="customerAddressSearch">
+
+      </div>
+      <div class="col-3">
+        <input class="form-control me-2" type="text" placeholder="Nhập SĐT.." aria-label="Search"  [(ngModel)]="customerPhoneSearch">
+
       </div>
       <div class="col-3 px-0" style="right: 0">
-        <button type="submit" class="btn" id="submit">Search</button>
+        <button class="btn" id="submit" (click)="searchByMore()">Search</button>
       </div>
     </div>
 
-  </form>
+  </div>
 </div>
-<div class="main">
-  <table id="list" class="table">
+<div class="main" style="width: 100vw">
+  <table id="list" class="table w-100">
     <thead>
     <tr>
       <th>No.</th>
@@ -47,45 +46,39 @@
       <th>Email</th>
       <th>Customer Type</th>
       <th>Address</th>
-      <th> View</th>
       <th> Edit</th>
       <th> Delete</th>
     </tr>
     </thead>
     <tbody>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-
-      <!--view button-->
-
+    <tr *ngFor="let item of customerListPaging; index as i">
+      <td class="text-center">{{i + 1 + (curPage - 1) * 5 }}</td>
+      <td>{{item.customerName | titlecase}}</td>
+      <td class="text-center">{{item.customerBirthday | date: "dd/MM/yyyy"}}</td>
       <td>
-        <button type="button" class="viewFacility btn btn-success"
-                data-bs-toggle="modal"
-                data-bs-target="#viewModal">
-          View
-        </button>
+        <span *ngIf="item.customerGender == 0">Nam</span>
+        <span *ngIf="item.customerGender == 1">Nữ</span>
+        <span *ngIf="item.customerGender == 2">LGBT</span>
       </td>
-      <!--Edit button -->
-      <td>
-        <a  href="edit.html" class="btn btn-primary">
-          Edit
+      <td>{{item.customerIdCard}}</td>
+      <td>{{item.customerPhone}}</td>
+      <td>{{item.customerEmail}}</td>
+      <td>{{item.customerType.customerTypeName}}</td>
+      <td>{{item.customerAddress}}</td>
+      <td class="text-center">
+        <a routerLink="/customer/edit/{{item.id}}">
+          <button class="btn btn-success btn-outline-secondary btn-sm">
+            <span class="fa-solid fa-user-pen text-light h6 m-auto px-2"></span>
+          </button>
         </a>
       </td>
-      <!--delete button-->
-      <td>
-        <button type="button" class="deleteConfirm btn btn-warning" data-bs-toggle="modal"
-                data-bs-target="#deleteModal">
-          Delete
-        </button>
 
+      <td class="text-center">
+        <button data-bs-toggle="modal" data-bs-target="#deleteCustomer"
+                class="btn btn-danger btn-outline-secondary btn-sm"
+                (click)="getInfoCustomerDelete(item.customerName, item.id)">
+          <span class="fa-solid fa-person-circle-minus text-light h6 m-auto px-2"></span>
+        </button>
       </td>
     </tr>
     </tbody>
@@ -93,104 +86,51 @@
 </div>
 
 <div style="padding-left: 30px">
-  <a>Previous</a>
-  <span></span>/<span></span>
-  <a>Next</a>
+  <nav aria-label="..." class="justify-content-center d-flex">
+    <ul class="pagination">
+      <li class="page-item">
+        <a class="page-link" (click)="previos()" *ngIf="curPage > 1">&laquo; Trang trước</a>
+      </li>
+      <li class="page-item disabled" *ngIf="curPage <= 1">
+        <a class="page-link">&laquo;</a>
+      </li>
+
+      <li class="page-item"><a class="page-link disabled" href=""
+                               [text]="curPage + ' / ' + totalPage" *ngIf="curPage <= totalPage"></a>
+      </li>
+
+      <li class="page-item">
+        <a class="page-link" (click)="next()" *ngIf="curPage < totalPage">Trang sau &raquo;</a>
+      </li>
+      <li class="page-item disabled" *ngIf="curPage >= totalPage">
+        <a class="page-link">&raquo;</a>
+      </li>
+    </ul>
+  </nav>
 </div>
 
 <!--delete modal-->
-<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+<div class="modal fade" id="deleteCustomer" tabindex="-1" aria-labelledby="exampleModalLabel1"
      aria-hidden="true">
   <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header btn-warning">
-        <h5 class="modal-title" id="exampleModalLabel-delete">Delete Customer</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                aria-label="Close"></button>
+    <div class="modal-content modalCSS">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLabel1">Bạn có chắc chắn muốn xóa?</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body btn-light">
-        Delete Customer <strong style="color: red" id="nameDelete"></strong>?
+
+      <div class="modal-body">
+        <span class="h6">Khách hàng:</span><strong class="text-danger ps-2">{{customerNameDelete}}</strong>
       </div>
-      <div class="btn-light modal-footer" id="deleteButton">
-        <button class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-        <form id="deleteForm" method="post">
-          <input type="hidden" name="id" id="idDelete">
-          <input type="submit" value="Confirm" class="btn btn-warning">
-        </form>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+        <button type="submit" class="btn btn-danger" data-bs-dismiss="modal" (click)="deleteCustomer()">Xóa</button>
       </div>
     </div>
   </div>
 </div>
 <!---->
-<!--View modal-->
-<div class="modal  fade" id="viewModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-     aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
 
-      <div class="modal-header btn-success">
-        <h5 class="modal-title" id="exampleModalLabel-edit">View Customer</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                aria-label="Close"></button>
-      </div>
-      <!--view modal body-->
-      <div class="modal-body btn-light p-3 px-3 mx-0">
-        <div class="d-flex">
-          <table class="table border-1">
-            <tr>
-              <td> Id:</td>
-              <td id="id"></td>
-            </tr>
-            <tr>
-              <td> Name:</td>
-              <td id="name"></td>
-            </tr>
-
-            <tr>
-              <td> Date of birth:</td>
-              <td id="dateOfBirth"></td>
-            </tr>
-
-            <tr>
-              <td> Gender</td>
-              <td id="gender"></td>
-            </tr>
-
-            <tr>
-              <td> Id Card:</td>
-              <td id="idCard"></td>
-            </tr>
-
-            <tr>
-              <td> Phone number:</td>
-              <td id="phoneNumber"></td>
-            </tr>
-
-            <tr>
-              <td> Email:</td>
-              <td id="email"></td>
-            </tr>
-
-            <tr>
-              <td> Customer Type:</td>
-              <td id="customerType"></td>
-            </tr>
-
-            <tr>
-              <td> Address:</td>
-              <td id="address"></td>
-            </tr>
-
-          </table>
-        </div>
-      </div>
-      <div class="btn-light modal-footer" id="editButton">
-        <button id="editCancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!---->
 
 </body>

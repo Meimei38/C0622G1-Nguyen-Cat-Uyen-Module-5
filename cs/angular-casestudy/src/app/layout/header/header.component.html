@@ -33,8 +33,8 @@
                 Customer
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Display Customer List</a></li>
-                <li><a class="dropdown-item" href="#">Create New Customer</a></li>
+                <li><a class="dropdown-item" routerLink="customer/list">Display Customer List</a></li>
+                <li><a class="dropdown-item" routerLink="customer/create">Create New Customer</a></li>
 
               </ul>
             </li>
@@ -63,10 +63,10 @@
             </li>
           </ul>
 
-          <form class="d-flex">
+          <div class="d-flex">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
+          </div>
         </div>
       </div>
     </nav>

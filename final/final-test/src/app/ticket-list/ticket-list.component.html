@@ -1,0 +1,175 @@
+<div class="container-fluid">
+  <div class="row" style="margin-top: 50px">
+
+    <h1>
+      Ticket List
+    </h1>
+
+  </div>
+  <div class="row d-flex" style="padding-left: 30px; padding-right: 30px">
+    <div style="width: 30%; float: left">
+      <button routerLink="/ticket/create" class="btn btn-success" type="submit" id="add"> Add new ticket</button>
+    </div>
+    <div style="width:70%; margin-right: 0; margin-bottom: 50px" role="search">
+      <div class="row px-0 mx-0">
+        <div class="col-3">
+          <span>From
+          <input class="form-control me-2" type="date" [(ngModel)]="startDateSearch"
+                 aria-label="Search">
+            </span>
+        </div>
+        <div class="col-3">
+          <span>To
+
+          <input class="form-control me-2" type="date" [(ngModel)]="endDateSearch"
+                 aria-label="Search">
+          </span>
+        </div>
+        <div class="col-3" style="margin-left: -4px; margin-top: 23px">
+          <input class="form-control me-2" type="text" placeholder="Enter destination" [(ngModel)]="destinationSearch"
+                 aria-label="Search">
+        </div>
+
+        <div class="col-3" style=" margin-top: 23px">
+          <input class="form-control me-2" type="text" placeholder="Enter departure" [(ngModel)]="departureSearch"
+                 aria-label="Search">
+        </div>
+
+        <div class="col-3 px-0" style="margin-left: 11px; margin-top: 20px">
+          <button class="btn btn-warning" id="submit" (click)="search()">Search</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="main">
+    <table id="list" class="table w-100 table-success table-bordered table-striped">
+      <thead>
+      <tr>
+        <th>No.</th>
+        <th>Departure</th>
+        <th>Destination</th>
+        <th>Cost</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Bus Brand</th>
+        <th> Quantity</th>
+        <th> Book</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let item of ticketList| paginate: {itemsPerPage:count,currentPage:page}, index as i">
+        <td>{{i + 1 + (page - 1) * count}}</td>
+        <td>{{item.departure}}</td>
+        <td>{{item.destination}}</td>
+        <td>{{item.cost}}</td>
+        <td>{{item.date}}</td>
+        <td>{{item.time}}</td>
+        <td>{{item.busBrand.name}}</td>
+        <td>{{item.quantity}}</td>
+
+        <td class="text-center">
+          <button data-bs-toggle="modal" data-bs-target="#bookTicket"
+                  class="btn btn-success btn-outline-secondary btn-sm">
+            <span class="fa-solid fa-person-circle-minus text-light h6 m-auto px-2"
+                  (click)="infoBooking(item.destination, item.departure, item.date, item.time, item.id)"></span>
+          </button>
+        </td>
+        <td class="text-center">
+          <a routerLink="/ticket/edit/{{item.id}}">
+            <button class="btn btn-success btn-outline-secondary btn-sm">
+              <span class="fa-solid fa-user-pen text-light h6 m-auto px-2"></span>
+            </button>
+          </a>
+        </td>
+        <td class="text-center">
+          <button data-bs-toggle="modal" data-bs-target="#deleteTicket"
+                  class="btn btn-danger btn-outline-secondary btn-sm">
+            <span class="fa-solid fa-person-circle-minus text-light h6 m-auto px-2"  (click)="infoBooking(item.destination, item.departure, item.date, item.time, item.id)"></span>
+          </button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="text-right" style="padding-left: 40%">
+    <pagination-controls (pageChange)="page = $event"></pagination-controls>
+  </div>
+
+  <div style="padding-left: 30px">
+
+  </div>
+<!--edit modal-->
+  <div class="modal fade" id="bookTicket" tabindex="-1" aria-labelledby="exampleModalLabel1"
+       aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content modalCSS">
+        <div class="modal-header">
+          <h4 class="modal-title" id="exampleModalLabel1">You really want to book?</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body">
+          <div>
+            <span class="h6">Destination:</span><strong class="text-danger ps-2">{{ticketBookDestination}}</strong>
+          </div>
+          <div>
+            <span class="h6">Departure:</span><strong class="text-danger ps-2">{{ticketBookDeparture}}</strong>
+          </div>
+          <div>
+            <span class="h6">Date:</span><strong class="text-danger ps-2">{{ticketBookDate}}</strong>
+
+          </div>
+          <div>
+            <span class="h6">Time:</span><strong class="text-danger ps-2">{{ticketBookTime}}</strong>
+
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-success"
+                  data-bs-dismiss="modal" (click)="book(ticketBookId)">Book
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!--delete modal-->
+  <div class="modal fade" id="deleteTicket" tabindex="-1" aria-labelledby="exampleModalLabel2"
+       aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content modalCSS">
+        <div class="modal-header">
+          <h4 class="modal-title" id="exampleModalLabel2">You really want to delete?</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body">
+          <div>
+            <span class="h6">Destination:</span><strong class="text-danger ps-2">{{ticketBookDestination}}</strong>
+          </div>
+          <div>
+            <span class="h6">Departure:</span><strong class="text-danger ps-2">{{ticketBookDeparture}}</strong>
+          </div>
+          <div>
+            <span class="h6">Date:</span><strong class="text-danger ps-2">{{ticketBookDate}}</strong>
+
+          </div>
+          <div>
+            <span class="h6">Time:</span><strong class="text-danger ps-2">{{ticketBookTime}}</strong>
+
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-danger" (click)="delete(ticketBookId)" data-bs-dismiss="modal">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

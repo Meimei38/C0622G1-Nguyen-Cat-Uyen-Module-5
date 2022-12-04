@@ -1,222 +1,98 @@
-<body id="fullPage">
-<div class="container-fluid">
-  <div style="padding-top: 35px; padding-left: 56%">
-    <form class="d-flex">
-      <span style="font-size: larger; margin-right: 10px" class="text-success fw-bold"> From </span>
-      <input type="date" class="form-select-sm me-2 border-success" style="border: 2px solid" id="startDate"
-             aria-label="Search">
-      <span style="font-size: larger; margin-right: 10px" class="text-success fw-bold"> To  </span>
-      <input type="date" class="form-select-sm me-2 border-success" style="border: 2px solid" id="endDate"
-             aria-label="Search">
+<div class="py-3 px-5">
+  <div class="px-5">
+    <h2 class="text-center fw-bold text-success mt-3">Facility list<i class="fa-solid fa-house"></i></h2>
 
-      <input class="form-control-sm me-2 border-success" style="border: 2px solid" type="search"
-             placeholder="Enter Facility Name" aria-label="Search">
-      <select class="form-select-sm border-success" style="border: 2px solid" aria-label="Facility Type">
-        <option value="" selected>Choose facility type</option>
-        <option value="1">Villa</option>
-        <option value="2">House</option>
-        <option value="3">Room</option>
-      </select>
-      <button class="btn btn-success mx-3 " type="submit">Search</button>
-    </form>
+    <nav class="navbar navbar-expand-lg py-0 my-0">
+      <div class="container-fluid">
+        <a routerLink="/facility/create">
+          <button class="btn btn-primary btn-outline-secondary">
+            <span class="fa-solid fa-house-medical text-light h5 my-auto me-1"></span>
+            <span class="text-light"> Add new facility</span>
+          </button>
+        </a>
 
-  </div>
-  <hr>
-  <h2 id="title">
-    Facility List
-  </h2>
-  <div class="container-fluid mainList">
-    <div class="row" >
-      <div class="col-4">
-        <div class="card">
-          <img src="https://furamavietnam.com/wp-content/uploads/2018/08/Vietnam_Danang_Furama_Villas_Pool_Villas-1047x563.jpg"
-               class="card-img-top" alt="...">
-          <div class="card-body">
-            <p>Room size: 85.8 m2</p>
-            <p class="card-text"><i class="fa-solid fa-car-side"></i><i
-              class="fa-solid fa-water-ladder"></i>
-              <i class="fa-solid fa-spa"></i>
-              <i class="fa-solid fa-wifi"></i> <i class="fa-regular fa-calendar-days"></i>
-            </p>
-            <button class="btn btn-success read-more" type="button">Read more!</button>
-
-          </div>
+        <div class="d-flex my-2" role="search">
+          <input class="form-control me-2" type="text" placeholder="Nhập tên dịch vụ.." aria-label="Search"
+                 [(ngModel)]="facilityNameSearch">
+          <button class="btn btn-light btn-outline-primary" (click)="searchName()">
+            <i class="fa-solid fa-magnifying-glass"></i></button>
         </div>
       </div>
-      <div class="col-4">
-        <div class="card">
-          <img src="https://furamavietnam.com/wp-content/uploads/2018/08/DSC08265-1047x563.jpg"
-               class="card-img-top" alt="...">
-          <div class="card-body">
-            <p>Room size: 85.8 m2</p>
-            <p class="card-text"><i class="fa-solid fa-car-side"></i><i
-              class="fa-solid fa-water-ladder"></i>
-              <i class="fa-solid fa-spa"></i>
-              <i class="fa-solid fa-wifi"></i> <i class="fa-regular fa-calendar-days"></i>
-            </p>
-            <button class="btn btn-success read-more" type="button">Read more!</button>
-          </div>
-        </div>
-      </div>
-      <div class="col-4">
-        <div class="card">
-          <img src="https://furamavietnam.com/wp-content/uploads/2018/08/Vietnam_Danang_Furama_Villas_Beach_Pool_Villas-_Exterior-1-F-871x563.jpg"
-               class="card-img-top" alt="...">
-          <div class="card-body">
-            <p>Room size: 85.8 m2</p>
-            <p class="card-text"><i class="fa-solid fa-car-side"></i><i
-              class="fa-solid fa-water-ladder"></i>
-              <i class="fa-solid fa-spa"></i>
-              <i class="fa-solid fa-wifi"></i> <i class="fa-regular fa-calendar-days"></i>
-            </p>
-            <button class="btn btn-success read-more" type="button">Read more!</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="container-fluid mainList" style="margin-bottom: 50px">
+    </nav>
+
     <div class="row">
-      <div class="col-4">
-        <div class="card">
-          <img src="https://furamavietnam.com/wp-content/uploads/2018/08/Vietnam_Danang_Furama_Villas_Beach_Pool_Villas-Sea-View-1047x563.jpg"
+      <div class="col-sm-4 mb-4" *ngFor="let item of facilityListPaging">
+        <div class="card facilityCSS">
+          <img height="250px"
+               src="{{item.facilityImage}}"
                class="card-img-top" alt="...">
           <div class="card-body">
-            <p>Room size: 85.8 m2</p>
-            <p class="card-text"><i class="fa-solid fa-car-side"></i><i
-              class="fa-solid fa-water-ladder"></i>
-              <i class="fa-solid fa-spa"></i>
-              <i class="fa-solid fa-wifi"></i> <i class="fa-regular fa-calendar-days"></i>
-            </p>
-            <button class="btn btn-success read-more" type="button">Read more!</button>
-          </div>
-        </div>
-      </div>
-      <div class="col-4">
-        <div class="card">
-          <img src="https://furamavietnam.com/wp-content/uploads/2018/08/Vietnam_Danang_Furama_Villas_Beach_Pool_Villas_Kitchen-Area-1047x563.jpg"
-               class="card-img-top" alt="...">
-          <div class="card-body">
-            <p>Room size: 85.8 m2</p>
-            <p class="card-text"><i class="fa-solid fa-car-side"></i><i
-              class="fa-solid fa-water-ladder"></i>
-              <i class="fa-solid fa-spa"></i>
-              <i class="fa-solid fa-wifi"></i> <i class="fa-regular fa-calendar-days"></i>
-            </p>
-            <button class="btn btn-success read-more" type="button">Read more!</button>
-          </div>
-        </div>
-      </div>
-      <div class="col-4">
-        <div class="card">
-          <img src="https://furamavietnam.com/wp-content/uploads/2018/08/Vietnam_Danang_Furama_Villas_Beach_Pool_Villas_Pool-1047x563.jpg"
-               class="card-img-top" alt="...">
-          <div class="card-body">
-            <p>Room size: 85.8 m2</p>
-            <p class="card-text"><i class="fa-solid fa-car-side"></i><i
-              class="fa-solid fa-water-ladder"></i>
-              <i class="fa-solid fa-spa"></i>
-              <i class="fa-solid fa-wifi"></i> <i class="fa-regular fa-calendar-days"></i>
-            </p>
-            <button class="btn btn-success read-more" type="button">Read more!</button>
+            <h5 class="card-title">{{item.facilityName | uppercase}}</h5>
+            <div class="row mb-2">
+              <div class="col-sm-6">
+                <span class="card-text">Facility type: {{item.facilityType.facilityTypeName | uppercase}}</span><br>
+                <span class="card-text">Area: {{item.facilityArea}} m<sup>2</sup></span><br>
+                <span class="card-text">Rent cost: {{item.rentCost | currency: "VND"}}</span>
+              </div>
+              <div class="col-sm-6">
+                <span class="card-text">Max people: {{item.maxPeople}}</span><br>
+                <span class="card-text">Rent type: {{item.rentType.rentTypeName}}</span>
+              </div>
+            </div>
+            <a routerLink="/facility/edit/{{item.id}}" class="me-2">
+              <button class="btn btn-warning btn-outline-secondary text-dark">Edit</button>
+            </a>
+            <button class="btn btn-danger btn-outline-secondary text-light"
+                    data-bs-toggle="modal" data-bs-target="#deleteFacility"
+                    (click)="getInfoFacilityDelete(item.facilityImage, item.facilityName, item.id)">Delete
+            </button>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
-<div class="container-fluid mainList">
-  <div class="row">
-    <div class="col-4">
-      <div class="card">
-        <img src="https://furamavietnam.com/wp-content/uploads/2018/08/Vietnam_Danang_Furama_Villas_Pool_Villas-1047x563.jpg"
-             class="card-img-top" alt="...">
-        <div class="card-body">
-          <p>Room size: 85.8 m2</p>
-          <p class="card-text"><i class="fa-solid fa-car-side"></i><i class="fa-solid fa-water-ladder"></i>
-            <i class="fa-solid fa-spa"></i>
-            <i class="fa-solid fa-wifi"></i> <i class="fa-regular fa-calendar-days"></i>
-          </p>
-          <button class="btn btn-success read-more" type="button">Read more!</button>
 
-        </div>
-      </div>
-    </div>
-    <div class="col-4">
-      <div class="card">
-        <img src="https://furamavietnam.com/wp-content/uploads/2018/08/DSC08265-1047x563.jpg"
-             class="card-img-top" alt="...">
-        <div class="card-body">
-          <p>Room size: 85.8 m2</p>
-          <p class="card-text"><i class="fa-solid fa-car-side"></i><i class="fa-solid fa-water-ladder"></i>
-            <i class="fa-solid fa-spa"></i>
-            <i class="fa-solid fa-wifi"></i> <i class="fa-regular fa-calendar-days"></i>
-          </p>
-          <button class="btn btn-success read-more" type="button">Read more!</button>
-        </div>
-      </div>
-    </div>
-    <div class="col-4">
-      <div class="card">
-        <img src="https://furamavietnam.com/wp-content/uploads/2018/08/Vietnam_Danang_Furama_Villas_Beach_Pool_Villas-_Exterior-1-F-871x563.jpg"
-             class="card-img-top" alt="...">
-        <div class="card-body">
-          <p>Room size: 85.8 m2</p>
-          <p class="card-text"><i class="fa-solid fa-car-side"></i><i class="fa-solid fa-water-ladder"></i>
-            <i class="fa-solid fa-spa"></i>
-            <i class="fa-solid fa-wifi"></i> <i class="fa-regular fa-calendar-days"></i>
-          </p>
-          <button class="btn btn-success read-more" type="button">Read more!</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="container-fluid mainList" style="margin-bottom: 50px">
-  <div class="row">
-    <div class="col-4">
-      <div class="card">
-        <img src="https://furamavietnam.com/wp-content/uploads/2018/08/Vietnam_Danang_Furama_Villas_Beach_Pool_Villas-Sea-View-1047x563.jpg"
-             class="card-img-top" alt="...">
-        <div class="card-body">
-          <p>Room size: 85.8 m2</p>
-          <p class="card-text"><i class="fa-solid fa-car-side"></i><i class="fa-solid fa-water-ladder"></i>
-            <i class="fa-solid fa-spa"></i>
-            <i class="fa-solid fa-wifi"></i> <i class="fa-regular fa-calendar-days"></i>
-          </p>
-          <button class="btn btn-success read-more" type="button">Read more!</button>
-        </div>
-      </div>
-    </div>
-    <div class="col-4">
-      <div class="card">
-        <img src="https://furamavietnam.com/wp-content/uploads/2018/08/Vietnam_Danang_Furama_Villas_Beach_Pool_Villas_Kitchen-Area-1047x563.jpg"
-             class="card-img-top" alt="...">
-        <div class="card-body">
-          <p>Room size: 85.8 m2</p>
-          <p class="card-text"><i class="fa-solid fa-car-side"></i><i class="fa-solid fa-water-ladder"></i>
-            <i class="fa-solid fa-spa"></i>
-            <i class="fa-solid fa-wifi"></i> <i class="fa-regular fa-calendar-days"></i>
-          </p>
-          <button class="btn btn-success read-more" type="button">Read more!</button>
-        </div>
-      </div>
-    </div>
-    <div class="col-4">
-      <div class="card">
-        <img src="https://furamavietnam.com/wp-content/uploads/2018/08/Vietnam_Danang_Furama_Villas_Beach_Pool_Villas_Pool-1047x563.jpg"
-             class="card-img-top" alt="...">
-        <div class="card-body">
-          <p>Room size: 85.8 m2</p>
-          <p class="card-text"><i class="fa-solid fa-car-side"></i><i class="fa-solid fa-water-ladder"></i>
-            <i class="fa-solid fa-spa"></i>
-            <i class="fa-solid fa-wifi"></i> <i class="fa-regular fa-calendar-days"></i>
-          </p>
-          <button class="btn btn-success read-more" type="button">Read more!</button>
-        </div>
-      </div>
-    </div>
+    <nav aria-label="..." class="justify-content-center d-flex">
+      <ul class="pagination">
+        <li class="page-item">
+          <a class="page-link" (click)="previos()" *ngIf="curPage > 1">&laquo; Previous</a>
+        </li>
+        <li class="page-item disabled" *ngIf="curPage <= 1">
+          <a class="page-link">&laquo;</a>
+        </li>
+
+        <li class="page-item"><a class="page-link disabled" href=""
+                                 [text]="curPage + ' / ' + totalPage"  *ngIf="curPage <= totalPage"></a>
+        </li>
+
+        <li class="page-item">
+          <a class="page-link" (click)="next()" *ngIf="curPage < totalPage">Next &raquo;</a>
+        </li>
+        <li class="page-item disabled" *ngIf="curPage >= totalPage">
+          <a class="page-link">&raquo;</a>
+        </li>
+      </ul>
+    </nav>
   </div>
 </div>
 
-</body>
+<div class="modal fade" id="deleteFacility" tabindex="-1" aria-labelledby="exampleModalLabel1"
+     aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content modalCSS">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLabel1">You want to delete?</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+        <img class="img-fluid pb-3" src="{{facilityImageDelete}}" alt="...">
+        <span class="h6">Facility:</span><strong class="text-danger ps-2">{{facilityNameDelete | uppercase}}</strong>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-danger" data-bs-dismiss="modal" (click)="deleteFacility()">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>

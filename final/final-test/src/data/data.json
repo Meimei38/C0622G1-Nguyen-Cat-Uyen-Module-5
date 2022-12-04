@@ -1,0 +1,66 @@
+{
+  "tickets": [
+    {
+      "cost": 150000,
+      "departure": " Da Nang",
+      "destination": "Ho Chi Minh",
+      "date": "2022-12-01",
+      "time": "10:30",
+      "busBrand": {
+        "id": 1,
+        "name": "ABC Tournament"
+      },
+      "quantity": 14,
+      "id": 1
+    },
+    {
+      "cost": 230000,
+      "departure": " Nha Trang",
+      "destination": "Da Lat",
+      "date": "2023-01-01",
+      "time": "20:30",
+      "busBrand": {
+        "id": 2,
+        "name": "Bus Tour"
+      },
+      "quantity": 2,
+      "id": 2
+    },
+    {
+      "cost": "213000",
+      "departure": "Ha Noi",
+      "destination": "Ho Chi Minh",
+      "date": "12/12/2021",
+      "time": "12:03",
+      "busBrand": {
+        "id": 1,
+        "name": "ABC Tournament"
+      },
+      "quantity": 0,
+      "id": 3
+    },
+    {
+      "cost": "123000",
+      "departure": "Nha Trang",
+      "destination": "Da Nang",
+      "date": "11/12/2022",
+      "time": "12:10",
+      "busBrand": {
+        "id": 1,
+        "name": "ABC Tournament"
+      },
+      "quantity": 2,
+      "id": 4
+    }
+  ],
+  "busBrands": [
+    {
+      "id": 1,
+      "name": "ABC Tournament"
+    },
+    {
+      "id": 2,
+      "name": "Bus Tour"
+    }
+  ]
+}

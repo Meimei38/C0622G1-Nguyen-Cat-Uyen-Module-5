@@ -14,6 +14,8 @@ import { FacilityCreateComponent } from './facility/facility-create/facility-cre
 import { FacilityEditComponent } from './facility/facility-edit/facility-edit.component';
 import { FacilityListComponent } from './facility/facility-list/facility-list.component';
 import { HomeComponent } from './home/home.component';
+import {HttpClientModule} from "@angular/common/http";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -31,8 +33,13 @@ import { HomeComponent } from './home/home.component';
     HomeComponent
   ],
   imports: [
+    ReactiveFormsModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]

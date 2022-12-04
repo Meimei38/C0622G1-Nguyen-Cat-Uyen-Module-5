@@ -24,7 +24,7 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {
     this.rfUser = this._formBuilder.group({
-      name: ['', [Validators.required, Validators.minLength(5)]],
+      name: ['', [Validators.required, Validators.minLength(5)], Validators.pattern('^\\p{Lu}\\p{Ll}+(\\s\\p{Lu}\\p{Ll}+)*$')],
       age: ['', [Validators.required, Validators.min(18), Validators.max(100)]],
       gender: [0],
       country: ['Viet Nam', [Validators.required]],

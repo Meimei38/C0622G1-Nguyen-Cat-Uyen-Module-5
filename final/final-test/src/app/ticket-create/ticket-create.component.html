@@ -1,0 +1,167 @@
+<body>
+<div class="container-fluid px-0" style="padding-bottom: 50px">
+
+  <div class="row">
+    <h1 style="padding-left: 42%">
+      Create Student
+    </h1>
+  </div>
+    <p class="text-center">
+      <a routerLink="/ticket/list"><i class="fa-solid fa-backward"></i> Back to ticket list</a>
+    </p>
+
+  <div class="row">
+    <div class="main">
+      <div class="d-flex justify-content-center">
+
+        <form class="w-50 border border-2 border-success p-3  rounded" [formGroup]="ticketForm" (ngSubmit)="submit()">
+
+
+          <div class="mt-3 form-group">
+
+            <label for="departure" class="h6">Departure <small style="color: red">*</small> :</label>
+
+            <div class="input-group">
+              <input type="text" id="departure" class="form-control" placeholder="Enter departure "
+                     formControlName="departure"
+                     [ngClass]="(ticketForm.controls['departure'].touched)?(ticketForm.controls['departure'].invalid)?'is-invalid':'valid':''">
+              <span class="input-group-text"><i class="fa-solid fa-file-signature"></i></span>
+
+              <div class="invalid-feedback " role="alert">
+                <div *ngIf="ticketForm.controls['departure'].hasError('required')">
+                  Required.
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="mt-3 form-group">
+            <label for="destination" class="h6">Destination <small style="color: red">*</small> :</label>
+            <div class="input-group">
+              <input type="text" id="destination" class="form-control" placeholder="Enter destination"
+                     formControlName="destination"
+                     [ngClass]="(ticketForm.controls['destination'].touched)?(ticketForm.controls['destination'].invalid)?'is-invalid':'valid':''"/>
+              <span class="input-group-text"><i class="fa-solid fa-file-signature"></i></span>
+
+              <div class="invalid-feedback " role="alert">
+                <div *ngIf="ticketForm.controls['destination'].hasError('required')">
+                  Required.
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+
+          <div class="form-group">
+            <label class="h6" for="busBrand">Bus Brand <small style="color: red">*</small> : </label>
+
+            <div class="input-group">
+              <select id="busBrand" class="form-select" formControlName="busBrand"
+                      [ngClass]="(ticketForm.controls['busBrand'].touched)?(ticketForm.controls['busBrand'].invalid)?'is-invalid':'valid':''">
+                <option value="" disabled>Choose Bus brand</option>
+               <option *ngFor="let item of busBrandList, index as i" [ngValue]="item">{{item.name}}</option>
+              </select>
+              <span class="input-group-text"><i class="fa-solid fa-house-user"></i></span>
+
+              <div class="invalid-feedback " role="alert">
+                <div *ngIf="ticketForm.controls['busBrand'].hasError('required')">
+                  Required.
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="mt-3 form-group">
+            <label for="date" class="h6">Departure Date <small style="color: red">*</small> :</label>
+
+            <div class="input-group">
+              <input type="date" id="date" class="form-control" placeholder="Enter date"
+                     formControlName="date"
+                     [ngClass]="(ticketForm.controls['date'].touched)?(ticketForm.controls['date'].invalid)?'is-invalid':'valid':''"/>
+              <span class="input-group-text"><i class="fa-solid fa-file-signature"></i></span>
+
+              <div class="invalid-feedback " role="alert">
+                <div *ngIf="ticketForm.controls['date'].hasError('required')">
+                  Required.
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="mt-3 form-group">
+            <label for="time" class="h6">Time <small style="color: red">*</small> :</label>
+            <div class="input-group">
+              <input type="text" id="time" class="form-control" placeholder="Enter time"
+                     formControlName="time"
+                     [ngClass]="(ticketForm.controls['time'].touched)?(ticketForm.controls['time'].invalid)?'is-invalid':'valid':''"/>
+              <span class="input-group-text"><i class="fa-solid fa-file-signature"></i></span>
+
+              <div class="invalid-feedback " role="alert">
+                <div *ngIf="ticketForm.controls['time'].hasError('required')">
+                  Required.
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="mt-3 form-group">
+            <label for="quantity" class="h6">Quantity <small style="color: red">*</small> :</label>
+            <div class="input-group">
+              <input type="text" id="quantity" class="form-control" placeholder="Enter quantity"
+                     formControlName="quantity"
+                     [ngClass]="(ticketForm.controls['quantity'].touched)?(ticketForm.controls['quantity'].invalid)?'is-invalid':'valid':''"/>
+              <span class="input-group-text"><i class="fa-solid fa-file-signature"></i></span>
+
+              <div class="invalid-feedback d-block " role="alert">
+                <div *ngIf="ticketForm.controls['quantity'].hasError('required')">
+                  Required.
+                </div>
+                <div *ngIf="ticketForm.controls['quantity'].hasError('minlength')">
+                  Quantity must be more than 0.
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="mt-3 form-group">
+            <label for="cost" class="h6">Cost <small style="color: red">*</small> :</label>
+            <div class="input-group">
+              <input type="text" id="cost" class="form-control" placeholder="Enter cost"
+                     formControlName="cost"
+                     [ngClass]="(ticketForm.controls['cost'].touched)?(ticketForm.controls['cost'].invalid)?'is-invalid':'valid':''"/>
+              <span class="input-group-text"><i class="fa-solid fa-file-signature"></i></span>
+
+              <div class="invalid-feedback d-block " role="alert">
+                <div *ngIf="ticketForm.controls['cost'].hasError('required')">
+                  Required.
+                </div>
+                <div *ngIf="ticketForm.controls['cost'].hasError('minlength')">
+                  Cost must be more than 0.
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="mt-3 text-center">
+            <button type="submit" class="btn  btn-sm border border-light btn-outline-warning  text-dark"  [disabled]="ticketForm.invalid">
+              -- Save --
+            </button>
+            <a routerLink="/ticket"><i class="fa-solid fa-backward"></i>
+              <button type="cancel" (click)="cancel()" class="btn  btn-sm border border-light btn-outline-warning  text-dark">
+                -- Cancel --
+              </button>
+            </a>
+
+
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
