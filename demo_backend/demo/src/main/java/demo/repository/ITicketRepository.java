@@ -16,7 +16,7 @@ public interface ITicketRepository extends JpaRepository<Ticket,Integer > {
             "where status like true " +
             "  and departure like %:start% " +
             "  and destination like %:end% " +
-            "  and DATE(t.date) BETWEEN DATE(:startDay) AND DATE(:endDay)",
+            "  and DATE(t.`date`) BETWEEN DATE(:startDay) AND DATE(:endDay)",
             nativeQuery = true)
     List<Ticket> search(@Param("start") String departure,
                         @Param("end") String destination,
@@ -29,4 +29,12 @@ public interface ITicketRepository extends JpaRepository<Ticket,Integer > {
             "and t.status = true",
             nativeQuery = true)
     Optional<Ticket> findTicketById(@Param("id") int id);
+
+    @Query(value = "select * " +
+            "from ticket t " +
+            "where t.status like true " +
+            "  and t.departure like %:start% " +
+            "  and t.destination like %:end% ",
+            nativeQuery = true)
+    List<Ticket> findAndSearch(@Param("start") String departure, @Param("end") String destination);
 }

@@ -11,4 +11,6 @@ public interface ITicketService {
     Optional<Ticket> findById(int id);
 
     void save(Ticket ticket);
+
+    List<Ticket> findAndSearch(String departure, String destination);
 }

@@ -15,7 +15,7 @@ export class TicketService {
   constructor(private http: HttpClient) { }
 
   findAllTicketSearch(destinationSearch: string, departureSearch: string):Observable<Ticket[]>{
-    return this.http.get<Ticket[]>(this.URL +'tickets?destination_like=' + destinationSearch + '&departure_like=' + departureSearch);
+    return this.http.get<Ticket[]>(this.URL +'tickets/list?destination=' + destinationSearch + '&departure=' + departureSearch);
   }
   findAllTicket():Observable<Ticket[]>{
      return this.http.get<Ticket[]>(this.URL +'tickets');

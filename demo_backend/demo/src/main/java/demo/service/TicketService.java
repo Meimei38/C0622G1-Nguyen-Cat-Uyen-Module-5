@@ -26,4 +26,9 @@ public class TicketService implements ITicketService{
     public void save(Ticket ticket) {
         ticketRepository.save(ticket);
     }
+
+    @Override
+    public List<Ticket> findAndSearch(String departure, String destination) {
+        return ticketRepository.findAndSearch(departure, destination);
+    }
 }

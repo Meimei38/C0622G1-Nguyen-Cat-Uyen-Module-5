@@ -21,8 +21,15 @@ public class TicketRestController {
     @Autowired
     private ITicketService ticketService;
 
+    @GetMapping("/list")
+    public ResponseEntity<List<Ticket>> findAll(@RequestParam(value = "departure", defaultValue = "") String departure,
+                                                         @RequestParam(value = "destination", defaultValue = "") String destination) {
+        List<Ticket> ticketList = ticketService.findAndSearch(departure, destination);
+        return new ResponseEntity<>(ticketList, HttpStatus.OK);
+    }
 
-    @GetMapping("")
+
+    @GetMapping("/search")
     public ResponseEntity<List<Ticket>> findAllAndSearch(@RequestParam(required = false, defaultValue = "") String departure,
                                                @RequestParam(required = false, defaultValue = "") String destination,
                                                @RequestParam(required = false, defaultValue = "") String start,
@@ -72,12 +79,5 @@ public class TicketRestController {
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
-    @GetMapping("/search")
-    public ResponseEntity<List<Ticket>> search(@RequestParam(required = false, defaultValue = "") String start,
-                                               @RequestParam(required = false, defaultValue = "") String end,
-                                               @RequestParam(required = false, defaultValue = "") String startDay,
-                                               @RequestParam(required = false, defaultValue = "") String endDay) {
-        List<Ticket> ticketList = ticketService.search(start, end, startDay, endDay);
-        return new ResponseEntity<>(ticketList, HttpStatus.OK);
-    }
+
 }
